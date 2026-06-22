@@ -216,6 +216,20 @@
       display: none;
     }
     .error-msg.visible { display: block; }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
   </style>
 </head>
 <body>
@@ -255,13 +269,13 @@
     <div class="max-w-2xl mx-auto">
 
       <!-- HEADER -->
-      <div class="text-center mb-10">
+      <div class="text-center mb-10 reveal">
         <h1 class="text-3xl font-black text-gray-900 mb-2">Iniciar Contratação</h1>
         <p class="text-gray-500 text-sm">Orçamento sob consulta · Sem compromisso</p>
       </div>
 
       <!-- STEP INDICATOR -->
-      <div class="step-indicator mb-10" id="stepIndicator">
+      <div class="step-indicator mb-10 reveal reveal-delay-1" id="stepIndicator">
         <div class="step-dot active" id="dot1">1</div>
         <div class="step-line" id="line1"></div>
         <div class="step-dot" id="dot2">2</div>
@@ -272,7 +286,7 @@
       </div>
 
       <!-- CARD CONTAINER -->
-      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 reveal reveal-delay-2">
 
         <!-- =========================================
              STEP 1 — Dados do Contratante
@@ -488,6 +502,20 @@
       <p class="text-white/20 text-xs">© 2026 ADA Agro</p>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
+  </script>
 
   <script>
     // ──────────────────────────────

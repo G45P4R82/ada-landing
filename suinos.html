@@ -117,6 +117,20 @@
       background: var(--gold);
     }
     .product-card:hover { border-color: rgba(201,168,76,0.5); background: rgba(255,255,255,0.07); }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
   </style>
   <script type="application/ld+json">
   {
@@ -214,7 +228,7 @@
   <!-- DEMO EM VÍDEO -->
   <section id="demo" class="bg-white py-24">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-14">
+      <div class="text-center mb-14 reveal">
         <span class="gold-line mb-4 block mx-auto"></span>
         <h2 class="text-4xl font-black text-gray-900 mb-4">Veja o Sistema em Ação</h2>
         <p class="text-gray-500 max-w-xl mx-auto text-lg">
@@ -225,7 +239,7 @@
       <div class="grid md:grid-cols-2 gap-8">
 
         <!-- Video 1: Contagem -->
-        <div>
+        <div class="reveal">
           <div class="video-wrapper mb-4 shadow-xl">
             <iframe
               src="https://www.youtube.com/embed/8UrAt9SPB-0"
@@ -249,7 +263,7 @@
         </div>
 
         <!-- Video 2: Pesagem -->
-        <div>
+        <div class="reveal reveal-delay-1">
           <div class="video-wrapper mb-4 shadow-xl">
             <iframe
               src="https://www.youtube.com/embed/WZYezcEbbYY"
@@ -279,7 +293,7 @@
   <!-- FUNCIONALIDADES -->
   <section id="funcionalidades" class="bg-gray-50 py-24">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-14">
+      <div class="text-center mb-14 reveal">
         <span class="gold-line mb-4 block mx-auto"></span>
         <h2 class="text-4xl font-black text-gray-900 mb-4">O que o SuinoCount AI faz</h2>
         <p class="text-gray-500 max-w-xl mx-auto text-lg">
@@ -288,7 +302,7 @@
       </div>
       <div class="grid md:grid-cols-3 gap-6">
 
-        <div class="feature-card">
+        <div class="feature-card reveal">
           <div class="text-2xl mb-3" aria-hidden="true" style="color:#2a5a8a;">◈</div>
           <h3 class="font-bold text-gray-900 mb-2">Contagem Automática</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
@@ -296,7 +310,7 @@
           </p>
         </div>
 
-        <div class="feature-card">
+        <div class="feature-card reveal reveal-delay-1">
           <div class="text-2xl mb-3" aria-hidden="true" style="color:#2a5a8a;">⊡</div>
           <h3 class="font-bold text-gray-900 mb-2">Pesagem por IA</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
@@ -304,7 +318,7 @@
           </p>
         </div>
 
-        <div class="feature-card">
+        <div class="feature-card reveal reveal-delay-2">
           <div class="text-2xl mb-3" aria-hidden="true" style="color:#2a5a8a;">⬡</div>
           <h3 class="font-bold text-gray-900 mb-2">Escore Corporal (BCS)</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
@@ -312,7 +326,7 @@
           </p>
         </div>
 
-        <div class="feature-card">
+        <div class="feature-card reveal">
           <div class="text-2xl mb-3" aria-hidden="true" style="color:#2a5a8a;">☁</div>
           <h3 class="font-bold text-gray-900 mb-2">Dashboard em Tempo Real</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
@@ -320,7 +334,7 @@
           </p>
         </div>
 
-        <div class="feature-card">
+        <div class="feature-card reveal reveal-delay-1">
           <div class="text-2xl mb-3" aria-hidden="true" style="color:#2a5a8a;">⟳</div>
           <h3 class="font-bold text-gray-900 mb-2">Relatórios Automáticos</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
@@ -328,7 +342,7 @@
           </p>
         </div>
 
-        <div class="feature-card">
+        <div class="feature-card reveal reveal-delay-2">
           <div class="text-2xl mb-3" aria-hidden="true" style="color:#2a5a8a;">⊛</div>
           <h3 class="font-bold text-gray-900 mb-2">Múltiplas Câmeras</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
@@ -343,7 +357,7 @@
   <!-- COMO FUNCIONA -->
   <section class="section-dark py-24">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-14">
+      <div class="text-center mb-14 reveal">
         <span class="gold-line mb-4 block mx-auto"></span>
         <h2 class="text-4xl font-black text-white mb-4">Como Funciona</h2>
         <p class="text-white/50 max-w-xl mx-auto text-lg">
@@ -351,28 +365,28 @@
         </p>
       </div>
       <div class="grid md:grid-cols-4 gap-6">
-        <div class="text-center">
+        <div class="text-center reveal">
           <div class="w-14 h-14 rounded-full border-2 border-[#C9A84C] flex items-center justify-center mx-auto mb-4">
             <span class="text-[#C9A84C] font-black text-xl">1</span>
           </div>
           <h4 class="text-white font-bold mb-2">Câmera</h4>
           <p class="text-white/40 text-sm">Stream RTSP da câmera IP da propriedade — qualquer câmera de mercado compatível.</p>
         </div>
-        <div class="text-center">
+        <div class="text-center reveal reveal-delay-1">
           <div class="w-14 h-14 rounded-full border-2 border-[#C9A84C] flex items-center justify-center mx-auto mb-4">
             <span class="text-[#C9A84C] font-black text-xl">2</span>
           </div>
           <h4 class="text-white font-bold mb-2">Modelo Proprietário</h4>
           <p class="text-white/40 text-sm">Modelo de visão computacional desenvolvido internamente, baseado no estado da arte do mercado e treinado com dados reais de granjas brasileiras.</p>
         </div>
-        <div class="text-center">
+        <div class="text-center reveal reveal-delay-2">
           <div class="w-14 h-14 rounded-full border-2 border-[#C9A84C] flex items-center justify-center mx-auto mb-4">
             <span class="text-[#C9A84C] font-black text-xl">3</span>
           </div>
           <h4 class="text-white font-bold mb-2">Cruzamento de Linha</h4>
           <p class="text-white/40 text-sm">Algoritmo de rastreamento detecta o momento exato em que o animal cruza a linha configurada.</p>
         </div>
-        <div class="text-center">
+        <div class="text-center reveal reveal-delay-3">
           <div class="w-14 h-14 rounded-full border-2 border-[#C9A84C] flex items-center justify-center mx-auto mb-4">
             <span class="text-[#C9A84C] font-black text-xl">4</span>
           </div>
@@ -386,12 +400,12 @@
   <!-- DIFERENCIAIS E-E-A-T -->
   <section class="bg-white py-24">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-14">
+      <div class="text-center mb-14 reveal">
         <span class="gold-line mb-4 block mx-auto"></span>
         <h2 class="text-4xl font-black text-gray-900 mb-4">Por que escolher o SuinoCount AI?</h2>
       </div>
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="border border-gray-100 rounded-lg p-8 shadow-sm">
+        <div class="border border-gray-100 rounded-lg p-8 shadow-sm reveal">
           <div class="w-12 h-12 rounded flex items-center justify-center mb-4" style="background:rgba(42,90,138,0.08);">
             <span class="font-black text-lg" style="color:#2a5a8a;">E</span>
           </div>
@@ -400,7 +414,7 @@
             Modelos de IA treinados com dados reais de granjas brasileiras. Não é uma solução genérica adaptada — foi construída do zero para a suinocultura nacional, com suas condições reais de iluminação, densidade e movimento.
           </p>
         </div>
-        <div class="border border-gray-100 rounded-lg p-8 shadow-sm">
+        <div class="border border-gray-100 rounded-lg p-8 shadow-sm reveal reveal-delay-1">
           <div class="w-12 h-12 rounded flex items-center justify-center mb-4" style="background:rgba(42,90,138,0.08);">
             <span class="font-black text-lg" style="color:#2a5a8a;">A</span>
           </div>
@@ -409,7 +423,7 @@
             Sistema validado com processamento a 58 FPS em hardware acessível. Resultados documentados, não promessas de marketing. Demonstrações reais disponíveis — veja os vídeos acima e julgue você mesmo.
           </p>
         </div>
-        <div class="border border-gray-100 rounded-lg p-8 shadow-sm">
+        <div class="border border-gray-100 rounded-lg p-8 shadow-sm reveal reveal-delay-2">
           <div class="w-12 h-12 rounded flex items-center justify-center mb-4" style="background:rgba(42,90,138,0.08);">
             <span class="font-black text-lg" style="color:#2a5a8a;">C</span>
           </div>
@@ -425,7 +439,7 @@
   <!-- CASES DE SUCESSO -->
   <section class="bg-gray-50 py-24">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-14">
+      <div class="text-center mb-14 reveal">
         <span class="gold-line mb-4 block mx-auto"></span>
         <h2 class="text-4xl font-black text-gray-900 mb-4">Resultados em Campo</h2>
         <p class="text-gray-500 max-w-xl mx-auto text-lg">
@@ -435,7 +449,7 @@
       <div class="grid md:grid-cols-2 gap-8">
 
         <!-- Case 1 -->
-        <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+        <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden reveal">
           <div class="p-6 border-b border-gray-100" style="background:#f0f6fc;">
             <div class="flex items-center gap-3 mb-3">
               <div class="w-10 h-10 rounded flex items-center justify-center" style="background:#2a5a8a;">
@@ -469,7 +483,7 @@
         </div>
 
         <!-- Case 2 -->
-        <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+        <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden reveal reveal-delay-1">
           <div class="p-6 border-b border-gray-100" style="background:#f0f6fc;">
             <div class="flex items-center gap-3 mb-3">
               <div class="w-10 h-10 rounded flex items-center justify-center" style="background:#2a5a8a;">
@@ -537,6 +551,20 @@
       <p class="text-white/20 text-xs">© 2026 ADA Agro</p>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
+  </script>
 
 </body>
 </html>
