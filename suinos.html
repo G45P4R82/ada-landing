@@ -33,15 +33,12 @@
       --forest: #1B3A2D;
       --forest-dark: #0F1F17;
       --gold: #C9A84C;
-      --petrol-deep: #0c2d3f;
-      --petrol-mid: #164e63;
-      --petrol: #0e7490;
-      --petrol-light: #1a6b7a;
+
     }
     body { font-family: 'Inter', system-ui, sans-serif; }
 
     .hero-gradient {
-      background: linear-gradient(135deg, #0c2d3f 0%, #164e63 50%, #1a6b7a 100%);
+      background: linear-gradient(135deg, #0F1F17 0%, #1B3A2D 50%, #243d2f 100%);
     }
     .bg-forest-dark { background-color: var(--forest-dark); }
     .text-gold { color: var(--gold); }
@@ -80,7 +77,7 @@
     .mobile-menu { display: none; }
     .mobile-menu.open { display: block; }
     .feature-card {
-      border-top: 3px solid #0e7490;
+      border-top: 3px solid var(--gold);
       background: white;
       border-radius: 8px;
       padding: 1.75rem;
@@ -147,7 +144,7 @@
         <div class="flex items-center gap-2">
           <span class="text-white font-bold text-lg tracking-wide">ADA</span>
           <span class="text-white/30 text-sm">/</span>
-          <span class="text-cyan-400 font-semibold text-sm">SuinoCount AI</span>
+          <span class="text-[#C9A84C] font-semibold text-sm">SuinoCount AI</span>
         </div>
       </a>
       <div class="hidden md:flex items-center gap-8">
@@ -239,8 +236,8 @@
             </iframe>
           </div>
           <div class="flex items-start gap-3">
-            <div class="w-8 h-8 rounded flex-shrink-0 flex items-center justify-center mt-0.5" style="background:#ecfeff;">
-              <span class="text-sm font-black" style="color:#155e75;">1</span>
+            <div class="w-8 h-8 rounded flex-shrink-0 flex items-center justify-center mt-0.5" style="background:rgba(27,58,45,0.08);">
+              <span class="text-sm font-black" style="color:#1B3A2D;">1</span>
             </div>
             <div>
               <h3 class="font-bold text-gray-900 mb-1">Contagem em Tempo Real — 58 FPS</h3>
@@ -263,8 +260,8 @@
             </iframe>
           </div>
           <div class="flex items-start gap-3">
-            <div class="w-8 h-8 rounded flex-shrink-0 flex items-center justify-center mt-0.5" style="background:#ecfeff;">
-              <span class="text-sm font-black" style="color:#155e75;">2</span>
+            <div class="w-8 h-8 rounded flex-shrink-0 flex items-center justify-center mt-0.5" style="background:rgba(27,58,45,0.08);">
+              <span class="text-sm font-black" style="color:#1B3A2D;">2</span>
             </div>
             <div>
               <h3 class="font-bold text-gray-900 mb-1">Pesagem e Avaliação Corporal por IA</h3>
@@ -292,7 +289,7 @@
       <div class="grid md:grid-cols-3 gap-6">
 
         <div class="feature-card">
-          <div class="text-2xl mb-3" aria-hidden="true" style="color:#0e7490;">◈</div>
+          <div class="text-2xl mb-3" aria-hidden="true" style="color:#1B3A2D;">◈</div>
           <h3 class="font-bold text-gray-900 mb-2">Contagem Automática</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Linha virtual configurável pelo próprio operador. Detecta e rastreia cada animal individualmente — sem confundir o mesmo suíno duas vezes.
@@ -300,7 +297,7 @@
         </div>
 
         <div class="feature-card">
-          <div class="text-2xl mb-3" aria-hidden="true" style="color:#0e7490;">⊡</div>
+          <div class="text-2xl mb-3" aria-hidden="true" style="color:#1B3A2D;">⊡</div>
           <h3 class="font-bold text-gray-900 mb-2">Pesagem por IA</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Estimativa de peso vivo com modelo de segmentação treinado para suínos. Sem balança, sem contenção, sem risco de lesão no animal ou operador.
@@ -308,7 +305,7 @@
         </div>
 
         <div class="feature-card">
-          <div class="text-2xl mb-3" aria-hidden="true" style="color:#0e7490;">⬡</div>
+          <div class="text-2xl mb-3" aria-hidden="true" style="color:#1B3A2D;">⬡</div>
           <h3 class="font-bold text-gray-900 mb-2">Escore Corporal (BCS)</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Avaliação visual do estado de condição corporal. Identifica animais abaixo ou acima do peso ideal para intervenção precoce na nutrição.
@@ -316,7 +313,7 @@
         </div>
 
         <div class="feature-card">
-          <div class="text-2xl mb-3" aria-hidden="true" style="color:#0e7490;">☁</div>
+          <div class="text-2xl mb-3" aria-hidden="true" style="color:#1B3A2D;">☁</div>
           <h3 class="font-bold text-gray-900 mb-2">Dashboard em Tempo Real</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Acompanhe contagens, alertas e métricas de qualquer dispositivo via navegador. Atualização em tempo real via WebSocket — sem recarregar a página.
@@ -324,7 +321,7 @@
         </div>
 
         <div class="feature-card">
-          <div class="text-2xl mb-3" aria-hidden="true" style="color:#0e7490;">⟳</div>
+          <div class="text-2xl mb-3" aria-hidden="true" style="color:#1B3A2D;">⟳</div>
           <h3 class="font-bold text-gray-900 mb-2">Relatórios Automáticos</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Histórico de contagens por câmera, por lote e por data. Exportação de dados para integração com sistemas de gestão (ERP) da propriedade.
@@ -332,7 +329,7 @@
         </div>
 
         <div class="feature-card">
-          <div class="text-2xl mb-3" aria-hidden="true" style="color:#0e7490;">⊛</div>
+          <div class="text-2xl mb-3" aria-hidden="true" style="color:#1B3A2D;">⊛</div>
           <h3 class="font-bold text-gray-900 mb-2">Múltiplas Câmeras</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Gerencie câmeras de diferentes baias e galpões em uma única interface. Cada câmera tem sua própria linha de contagem e configuração independente.
@@ -395,8 +392,8 @@
       </div>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="border border-gray-100 rounded-lg p-8 shadow-sm">
-          <div class="w-12 h-12 rounded flex items-center justify-center mb-4" style="background:#ecfeff;">
-            <span class="font-black text-lg" style="color:#155e75;">E</span>
+          <div class="w-12 h-12 rounded flex items-center justify-center mb-4" style="background:rgba(27,58,45,0.08);">
+            <span class="font-black text-lg" style="color:#1B3A2D;">E</span>
           </div>
           <h3 class="font-bold text-gray-900 text-xl mb-3">Expertise</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
@@ -404,8 +401,8 @@
           </p>
         </div>
         <div class="border border-gray-100 rounded-lg p-8 shadow-sm">
-          <div class="w-12 h-12 rounded flex items-center justify-center mb-4" style="background:#ecfeff;">
-            <span class="font-black text-lg" style="color:#155e75;">A</span>
+          <div class="w-12 h-12 rounded flex items-center justify-center mb-4" style="background:rgba(27,58,45,0.08);">
+            <span class="font-black text-lg" style="color:#1B3A2D;">A</span>
           </div>
           <h3 class="font-bold text-gray-900 text-xl mb-3">Autoridade</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
@@ -413,8 +410,8 @@
           </p>
         </div>
         <div class="border border-gray-100 rounded-lg p-8 shadow-sm">
-          <div class="w-12 h-12 rounded flex items-center justify-center mb-4" style="background:#ecfeff;">
-            <span class="font-black text-lg" style="color:#155e75;">C</span>
+          <div class="w-12 h-12 rounded flex items-center justify-center mb-4" style="background:rgba(27,58,45,0.08);">
+            <span class="font-black text-lg" style="color:#1B3A2D;">C</span>
           </div>
           <h3 class="font-bold text-gray-900 text-xl mb-3">Confiança</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
@@ -439,9 +436,9 @@
 
         <!-- Case 1 -->
         <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
-          <div class="p-6 border-b border-gray-100" style="background:#f0fdfa;">
+          <div class="p-6 border-b border-gray-100" style="background:#F8FBF9;">
             <div class="flex items-center gap-3 mb-3">
-              <div class="w-10 h-10 rounded flex items-center justify-center" style="background:#155e75;">
+              <div class="w-10 h-10 rounded flex items-center justify-center" style="background:#1B3A2D;">
                 <span class="text-white font-black text-sm">SM</span>
               </div>
               <div>
@@ -459,11 +456,11 @@
             <div class="mt-5 pt-5 border-t border-gray-100">
               <div class="grid grid-cols-2 gap-4">
                 <div>
-                  <div class="text-xl font-black" style="color:#155e75;">100%</div>
+                  <div class="text-xl font-black" style="color:#1B3A2D;">100%</div>
                   <div class="text-gray-400 text-xs">Precisão verificada nos romaneios</div>
                 </div>
                 <div>
-                  <div class="text-xl font-black" style="color:#155e75;">0</div>
+                  <div class="text-xl font-black" style="color:#1B3A2D;">0</div>
                   <div class="text-gray-400 text-xs">Divergências em 6 meses de uso</div>
                 </div>
               </div>
@@ -473,9 +470,9 @@
 
         <!-- Case 2 -->
         <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
-          <div class="p-6 border-b border-gray-100" style="background:#f0fdfa;">
+          <div class="p-6 border-b border-gray-100" style="background:#F8FBF9;">
             <div class="flex items-center gap-3 mb-3">
-              <div class="w-10 h-10 rounded flex items-center justify-center" style="background:#155e75;">
+              <div class="w-10 h-10 rounded flex items-center justify-center" style="background:#1B3A2D;">
                 <span class="text-white font-black text-sm">BV</span>
               </div>
               <div>
@@ -493,11 +490,11 @@
             <div class="mt-5 pt-5 border-t border-gray-100">
               <div class="grid grid-cols-2 gap-4">
                 <div>
-                  <div class="text-xl font-black" style="color:#155e75;">24h</div>
+                  <div class="text-xl font-black" style="color:#1B3A2D;">24h</div>
                   <div class="text-gray-400 text-xs">Histórico de vídeo rastreável</div>
                 </div>
                 <div>
-                  <div class="text-xl font-black" style="color:#155e75;">3 câmeras</div>
+                  <div class="text-xl font-black" style="color:#1B3A2D;">3 câmeras</div>
                   <div class="text-gray-400 text-xs">Cobrindo pontos críticos de fluxo</div>
                 </div>
               </div>
