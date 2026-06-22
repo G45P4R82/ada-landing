@@ -3,8 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BovinoSmart AI — Monitoramento Inteligente de Bovinos | ADA</title>
-  <meta name="description" content="BovinoSmart AI: monitoramento inteligente de bovinos com visão computacional. Contagem no brete, identificação de raça e porte, detecção de anomalias. Tecnologia ADA para pecuária de precisão." />
+  <title>BovinoSmart AI — Monitoramento Inteligente de Bovinos | ADA Agro</title>
+  <meta name="description" content="BovinoSmart AI: monitoramento inteligente de bovinos com visão computacional. Contagem automática no brete, identificação de raça e porte, detecção de anomalias comportamentais. Solução brasileira de pecuária de precisão com IA para Nelore, Angus e Girolando." />
+  <meta name="keywords" content="monitoramento de bovinos, pecuária de precisão, contagem de gado, contagem no brete, visão computacional bovinos, IA pecuária, detecção de anomalias gado, BovinoSmart AI, agrotecnologia Brasil" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://g45p4r82.github.io/ada-landing/gado.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="BovinoSmart AI — Monitoramento Inteligente de Bovinos" />
+  <meta property="og:description" content="Contagem automática no brete, identificação de raça e porte, detecção de anomalias comportamentais. Pecuária de precisão com IA brasileira." />
+  <meta property="og:url" content="https://g45p4r82.github.io/ada-landing/gado.html" />
+  <meta property="og:site_name" content="ADA Agro" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="BovinoSmart AI — Pecuária de Precisão com IA" />
+  <meta name="twitter:description" content="Monitoramento inteligente de bovinos. Contagem no brete, detecção de anomalias e relatórios em tempo real." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='6' fill='%23C9A84C'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='900' font-size='14' fill='%230F1F17'%3EADA%3C/text%3E%3C/svg%3E" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -52,6 +72,8 @@
       transition: color 0.2s;
     }
     .nav-link:hover { color: var(--gold); }
+    .mobile-menu { display: none; }
+    .mobile-menu.open { display: block; }
     .feature-card {
       border-top: 3px solid #15803d;
       background: white;
@@ -85,8 +107,9 @@
     "applicationCategory": "BusinessApplication",
     "description": "Monitoramento inteligente de bovinos com visão computacional. Contagem no brete, identificação de raça e porte, detecção de anomalias comportamentais.",
     "operatingSystem": "Web",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
-    "provider": { "@type": "Organization", "name": "ADA Agro", "email": "contato.olheai@gmail.com" }
+    "offers": { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "BRL" }, "availability": "https://schema.org/OnlineOnly" },
+    "provider": { "@type": "Organization", "name": "ADA Agro", "email": "contato.olheai@gmail.com", "url": "https://g45p4r82.github.io/ada-landing/" },
+    "keywords": "monitoramento de bovinos, pecuária de precisão, contagem de gado, detecção de anomalias"
   }
   </script>
 </head>
@@ -110,7 +133,17 @@
         <a href="#funcionalidades" class="nav-link">Funcionalidades</a>
         <a href="suinos.html" class="nav-link">SuinoCount AI</a>
       </div>
-      <a href="contratar.html" class="btn-gold text-sm">Contratar</a>
+      <div class="flex items-center gap-4">
+        <a href="contratar.html" class="btn-gold text-sm">Contratar</a>
+        <button onclick="document.getElementById('mobileMenu').classList.toggle('open')" class="md:hidden text-white/70 hover:text-white" aria-label="Abrir menu de navegação">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden border-t border-white/10 px-6 py-4 space-y-3">
+      <a href="index.html" class="nav-link block">Início</a>
+      <a href="#funcionalidades" class="nav-link block">Funcionalidades</a>
+      <a href="suinos.html" class="nav-link block">SuinoCount AI</a>
     </div>
   </nav>
 
@@ -220,7 +253,7 @@
       <div class="grid md:grid-cols-3 gap-6">
 
         <div class="feature-card">
-          <div class="text-green-700 text-2xl mb-3">◈</div>
+          <div class="text-green-700 text-2xl mb-3" aria-hidden="true">◈</div>
           <h3 class="font-bold text-gray-900 mb-2">Contagem no Brete</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Contagem automática e sem falha de bovinos que passam pelo brete. Linha virtual configurável — sem hardware adicional além da câmera.
@@ -228,7 +261,7 @@
         </div>
 
         <div class="feature-card">
-          <div class="text-green-700 text-2xl mb-3">⊡</div>
+          <div class="text-green-700 text-2xl mb-3" aria-hidden="true">⊡</div>
           <h3 class="font-bold text-gray-900 mb-2">Identificação de Raça e Porte</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Classificação automática por porte e características visuais do animal. Diferenciação de categorias do lote sem manejo manual.
@@ -236,7 +269,7 @@
         </div>
 
         <div class="feature-card">
-          <div class="text-green-700 text-2xl mb-3">⬡</div>
+          <div class="text-green-700 text-2xl mb-3" aria-hidden="true">⬡</div>
           <h3 class="font-bold text-gray-900 mb-2">Detecção de Anomalias</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Alertas automáticos para comportamentos atípicos — animal isolado, queda, claudicação. Intervenção precoce antes do problema se agravar.
@@ -244,7 +277,7 @@
         </div>
 
         <div class="feature-card">
-          <div class="text-green-700 text-2xl mb-3">☁</div>
+          <div class="text-green-700 text-2xl mb-3" aria-hidden="true">☁</div>
           <h3 class="font-bold text-gray-900 mb-2">Dashboard em Tempo Real</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Acompanhe seu rebanho de qualquer lugar via navegador. Alertas, contagens e métricas sincronizados em tempo real.
@@ -252,7 +285,7 @@
         </div>
 
         <div class="feature-card">
-          <div class="text-green-700 text-2xl mb-3">⟳</div>
+          <div class="text-green-700 text-2xl mb-3" aria-hidden="true">⟳</div>
           <h3 class="font-bold text-gray-900 mb-2">Relatórios e Exportação</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Histórico completo de contagens, alertas e eventos por câmera e por lote. Exportação de dados para sistemas de gestão da propriedade.
@@ -260,7 +293,7 @@
         </div>
 
         <div class="feature-card">
-          <div class="text-green-700 text-2xl mb-3">⊛</div>
+          <div class="text-green-700 text-2xl mb-3" aria-hidden="true">⊛</div>
           <h3 class="font-bold text-gray-900 mb-2">Suporte Operacional</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Implantação acompanhada, calibração dos modelos para seu rebanho específico e suporte contínuo na operação. Não é só um software — é uma parceria.
@@ -279,7 +312,7 @@
         <h2 class="text-4xl font-black text-white mb-4">Por que escolher o BovinoSmart AI?</h2>
       </div>
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="border border-white/10 rounded-lg p-8 bg-white/4">
+        <div class="border border-white/10 rounded-lg p-8 bg-white/[0.04]">
           <div class="w-12 h-12 rounded flex items-center justify-center bg-green-900/60 mb-4">
             <span class="text-green-400 font-black text-lg">E</span>
           </div>
@@ -288,7 +321,7 @@
             Modelos desenvolvidos para bovinos brasileiros — Nelore, Angus, Girolando — em suas condições reais de campo, brete e confinamento.
           </p>
         </div>
-        <div class="border border-white/10 rounded-lg p-8 bg-white/4">
+        <div class="border border-white/10 rounded-lg p-8 bg-white/[0.04]">
           <div class="w-12 h-12 rounded flex items-center justify-center bg-green-900/60 mb-4">
             <span class="text-green-400 font-black text-lg">A</span>
           </div>
@@ -297,7 +330,7 @@
             Mesma infraestrutura validada no SuinoCount AI — modelo proprietário de visão computacional + rastreamento em tempo real, agora adaptado para as particularidades do rebanho bovino.
           </p>
         </div>
-        <div class="border border-white/10 rounded-lg p-8 bg-white/4">
+        <div class="border border-white/10 rounded-lg p-8 bg-white/[0.04]">
           <div class="w-12 h-12 rounded flex items-center justify-center bg-green-900/60 mb-4">
             <span class="text-green-400 font-black text-lg">C</span>
           </div>
@@ -336,7 +369,7 @@
         <a href="suinos.html" class="text-white/30 text-sm hover:text-[#C9A84C] transition-colors">SuinoCount AI</a>
         <a href="contratar.html" class="text-white/30 text-sm hover:text-[#C9A84C] transition-colors">Contratar</a>
         <a href="mailto:contato.olheai@gmail.com" class="text-white/30 text-sm hover:text-[#C9A84C] transition-colors">contato.olheai@gmail.com</a>
-        <a href="https://instagram.com/Olheai123456" target="_blank" rel="noopener" class="text-white/30 text-sm hover:text-[#C9A84C] transition-colors">@Olheai123456</a>
+
       </div>
       <p class="text-white/20 text-xs">© 2026 ADA Agro</p>
     </div>

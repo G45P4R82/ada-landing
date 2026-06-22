@@ -3,8 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SuinoCount AI — Contagem e Pesagem de Suínos por IA | ADA</title>
-  <meta name="description" content="SuinoCount AI: contagem automática de suínos em tempo real a 58 FPS, pesagem por segmentação e avaliação de escore corporal. Tecnologia ADA para suinocultura de precisão." />
+  <title>SuinoCount AI — Contagem e Pesagem de Suínos por IA | ADA Agro</title>
+  <meta name="description" content="SuinoCount AI: contagem automática de suínos em tempo real a 58 FPS, pesagem por segmentação de IA e avaliação de escore corporal (BCS). Solução brasileira para suinocultura de precisão com visão computacional. Veja demonstrações reais em vídeo." />
+  <meta name="keywords" content="contagem de suínos, suinocultura de precisão, pesagem de suínos por IA, escore corporal suínos, BCS suínos, visão computacional suinocultura, contagem automática animais, SuinoCount AI" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://g45p4r82.github.io/ada-landing/suinos.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SuinoCount AI — Contagem e Pesagem de Suínos por IA" />
+  <meta property="og:description" content="Contagem automática a 58 FPS, pesagem por segmentação e avaliação de escore corporal. Veja demonstrações reais da suinocultura de precisão com IA." />
+  <meta property="og:url" content="https://g45p4r82.github.io/ada-landing/suinos.html" />
+  <meta property="og:site_name" content="ADA Agro" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="SuinoCount AI — Contagem de Suínos por IA" />
+  <meta name="twitter:description" content="58 FPS em tempo real. Pesagem sem balança. Suinocultura de precisão com visão computacional brasileira." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='6' fill='%23C9A84C'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='900' font-size='14' fill='%230F1F17'%3EADA%3C/text%3E%3C/svg%3E" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -55,6 +75,8 @@
       transition: color 0.2s;
     }
     .nav-link:hover { color: var(--gold); }
+    .mobile-menu { display: none; }
+    .mobile-menu.open { display: block; }
     .feature-card {
       border-top: 3px solid #be123c;
       background: white;
@@ -105,9 +127,9 @@
     "applicationCategory": "BusinessApplication",
     "description": "Sistema de contagem automática de suínos em tempo real com visão computacional proprietária. Pesagem por segmentação IA e avaliação de escore corporal.",
     "operatingSystem": "Web",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
-    "provider": { "@type": "Organization", "name": "ADA Agro", "email": "contato.olheai@gmail.com" },
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "12" }
+    "offers": { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "BRL" }, "availability": "https://schema.org/OnlineOnly" },
+    "provider": { "@type": "Organization", "name": "ADA Agro", "email": "contato.olheai@gmail.com", "url": "https://g45p4r82.github.io/ada-landing/" },
+    "keywords": "contagem de suínos, suinocultura de precisão, pesagem por IA, escore corporal"
   }
   </script>
 </head>
@@ -132,7 +154,18 @@
         <a href="#funcionalidades" class="nav-link">Funcionalidades</a>
         <a href="gado.html" class="nav-link">BovinoSmart</a>
       </div>
-      <a href="contratar.html" class="btn-gold text-sm">Contratar</a>
+      <div class="flex items-center gap-4">
+        <a href="contratar.html" class="btn-gold text-sm">Contratar</a>
+        <button onclick="document.getElementById('mobileMenu').classList.toggle('open')" class="md:hidden text-white/70 hover:text-white" aria-label="Abrir menu de navegação">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden border-t border-white/10 px-6 py-4 space-y-3">
+      <a href="index.html" class="nav-link block">Início</a>
+      <a href="#demo" class="nav-link block">Demo</a>
+      <a href="#funcionalidades" class="nav-link block">Funcionalidades</a>
+      <a href="gado.html" class="nav-link block">BovinoSmart</a>
     </div>
   </nav>
 
@@ -198,6 +231,7 @@
             <iframe
               src="https://www.youtube.com/embed/8UrAt9SPB-0"
               title="Contagem de Suínos em Tempo Real — 58 FPS | SuinoCount AI"
+              loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen>
             </iframe>
@@ -221,6 +255,7 @@
             <iframe
               src="https://www.youtube.com/embed/WZYezcEbbYY"
               title="Pesagem e Avaliação Corporal de Suínos por IA | SuinoCount AI"
+              loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen>
             </iframe>
@@ -255,7 +290,7 @@
       <div class="grid md:grid-cols-3 gap-6">
 
         <div class="feature-card">
-          <div class="text-rose-700 text-2xl mb-3">◈</div>
+          <div class="text-rose-700 text-2xl mb-3" aria-hidden="true">◈</div>
           <h3 class="font-bold text-gray-900 mb-2">Contagem Automática</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Linha virtual configurável pelo próprio operador. Detecta e rastreia cada animal individualmente — sem confundir o mesmo suíno duas vezes.
@@ -263,7 +298,7 @@
         </div>
 
         <div class="feature-card">
-          <div class="text-rose-700 text-2xl mb-3">⊡</div>
+          <div class="text-rose-700 text-2xl mb-3" aria-hidden="true">⊡</div>
           <h3 class="font-bold text-gray-900 mb-2">Pesagem por IA</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Estimativa de peso vivo com modelo de segmentação treinado para suínos. Sem balança, sem contenção, sem risco de lesão no animal ou operador.
@@ -271,7 +306,7 @@
         </div>
 
         <div class="feature-card">
-          <div class="text-rose-700 text-2xl mb-3">⬡</div>
+          <div class="text-rose-700 text-2xl mb-3" aria-hidden="true">⬡</div>
           <h3 class="font-bold text-gray-900 mb-2">Escore Corporal (BCS)</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Avaliação visual do estado de condição corporal. Identifica animais abaixo ou acima do peso ideal para intervenção precoce na nutrição.
@@ -279,7 +314,7 @@
         </div>
 
         <div class="feature-card">
-          <div class="text-rose-700 text-2xl mb-3">☁</div>
+          <div class="text-rose-700 text-2xl mb-3" aria-hidden="true">☁</div>
           <h3 class="font-bold text-gray-900 mb-2">Dashboard em Tempo Real</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Acompanhe contagens, alertas e métricas de qualquer dispositivo via navegador. Atualização em tempo real via WebSocket — sem recarregar a página.
@@ -287,7 +322,7 @@
         </div>
 
         <div class="feature-card">
-          <div class="text-rose-700 text-2xl mb-3">⟳</div>
+          <div class="text-rose-700 text-2xl mb-3" aria-hidden="true">⟳</div>
           <h3 class="font-bold text-gray-900 mb-2">Relatórios Automáticos</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Histórico de contagens por câmera, por lote e por data. Exportação de dados para integração com sistemas de gestão (ERP) da propriedade.
@@ -295,7 +330,7 @@
         </div>
 
         <div class="feature-card">
-          <div class="text-rose-700 text-2xl mb-3">⊛</div>
+          <div class="text-rose-700 text-2xl mb-3" aria-hidden="true">⊛</div>
           <h3 class="font-bold text-gray-900 mb-2">Múltiplas Câmeras</h3>
           <p class="text-gray-500 text-sm leading-relaxed">
             Gerencie câmeras de diferentes baias e galpões em uma única interface. Cada câmera tem sua própria linha de contagem e configuração independente.
@@ -414,7 +449,7 @@
         <a href="gado.html" class="text-white/30 text-sm hover:text-[#C9A84C] transition-colors">BovinoSmart AI</a>
         <a href="contratar.html" class="text-white/30 text-sm hover:text-[#C9A84C] transition-colors">Contratar</a>
         <a href="mailto:contato.olheai@gmail.com" class="text-white/30 text-sm hover:text-[#C9A84C] transition-colors">contato.olheai@gmail.com</a>
-        <a href="https://instagram.com/Olheai123456" target="_blank" rel="noopener" class="text-white/30 text-sm hover:text-[#C9A84C] transition-colors">@Olheai123456</a>
+
       </div>
       <p class="text-white/20 text-xs">© 2026 ADA Agro</p>
     </div>

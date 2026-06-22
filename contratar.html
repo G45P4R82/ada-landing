@@ -3,8 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contratar — ADA Agro</title>
-  <meta name="description" content="Inicie sua contratação da ADA. Configure seu dispositivo, informe seus dados e comece a monitorar seu rebanho com visão computacional." />
+  <title>Contratar — ADA Agro | Pecuária de Precisão com IA</title>
+  <meta name="description" content="Inicie sua contratação da ADA. Configure seu dispositivo de monitoramento, informe seus dados e comece a contar e monitorar seu rebanho com visão computacional e IA." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://g45p4r82.github.io/ada-landing/contratar.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contratar — ADA Agro" />
+  <meta property="og:description" content="Configure seu dispositivo de monitoramento e comece a automatizar a contagem e o controle do seu rebanho com IA." />
+  <meta property="og:url" content="https://g45p4r82.github.io/ada-landing/contratar.html" />
+  <meta property="og:site_name" content="ADA Agro" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Contratar — ADA Agro" />
+  <meta name="twitter:description" content="Pecuária de precisão com IA. Configure seu dispositivo e comece a monitorar seu rebanho." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='6' fill='%23C9A84C'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='900' font-size='14' fill='%230F1F17'%3EADA%3C/text%3E%3C/svg%3E" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -26,6 +45,8 @@
       transition: color 0.2s;
     }
     .nav-link:hover { color: var(--gold); }
+    .mobile-menu { display: none; }
+    .mobile-menu.open { display: block; }
 
     /* PROGRESS BAR */
     .step-indicator {
@@ -216,7 +237,16 @@
         <a href="index.html" class="nav-link">Início</a>
         <a href="suinos.html" class="nav-link">SuinoCount AI</a>
         <a href="gado.html" class="nav-link">BovinoSmart AI</a>
+      <div class="flex items-center gap-4">
+        <button onclick="document.getElementById('mobileMenu').classList.toggle('open')" class="md:hidden text-white/70 hover:text-white" aria-label="Abrir menu de navegação">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
       </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden border-t border-white/10 px-6 py-4 space-y-3">
+      <a href="index.html" class="nav-link block">Início</a>
+      <a href="suinos.html" class="nav-link block">SuinoCount AI</a>
+      <a href="gado.html" class="nav-link block">BovinoSmart AI</a>
     </div>
   </nav>
 
@@ -256,19 +286,19 @@
 
             <div class="md:col-span-2">
               <label class="field-label" for="nome">Nome completo *</label>
-              <input class="field-input" type="text" id="nome" placeholder="João da Silva" />
+              <input class="field-input" type="text" id="nome" placeholder="João da Silva" autocomplete="name" />
               <p class="error-msg" id="err-nome">Preencha o nome completo.</p>
             </div>
 
             <div>
               <label class="field-label" for="email">E-mail *</label>
-              <input class="field-input" type="email" id="email" placeholder="joao@fazenda.com.br" />
+              <input class="field-input" type="email" id="email" placeholder="joao@fazenda.com.br" autocomplete="email" />
               <p class="error-msg" id="err-email">E-mail inválido.</p>
             </div>
 
             <div>
               <label class="field-label" for="telefone">Telefone / WhatsApp *</label>
-              <input class="field-input" type="tel" id="telefone" placeholder="(11) 9 9999-9999" />
+              <input class="field-input" type="tel" id="telefone" placeholder="(11) 9 9999-9999" autocomplete="tel" />
               <p class="error-msg" id="err-telefone">Preencha o telefone.</p>
             </div>
 
@@ -280,12 +310,12 @@
 
             <div>
               <label class="field-label" for="empresa">Nome da propriedade / empresa</label>
-              <input class="field-input" type="text" id="empresa" placeholder="Fazenda Santa Marta" />
+              <input class="field-input" type="text" id="empresa" placeholder="Fazenda Santa Marta" autocomplete="organization" />
             </div>
 
             <div class="md:col-span-2">
               <label class="field-label" for="endereco">Endereço da propriedade *</label>
-              <input class="field-input" type="text" id="endereco" placeholder="Rod. BR-163, Km 245, Sorriso – MT" />
+              <input class="field-input" type="text" id="endereco" placeholder="Rod. BR-163, Km 245, Sorriso – MT" autocomplete="street-address" />
               <p class="error-msg" id="err-endereco">Preencha o endereço.</p>
             </div>
 
@@ -418,8 +448,7 @@
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
               <a href="index.html" class="btn-primary text-center">Voltar ao início</a>
-              <a href="https://instagram.com/Olheai123456" target="_blank" rel="noopener"
-                 class="btn-ghost text-center">@Olheai123456 no Instagram</a>
+
             </div>
           </div>
         </div>
@@ -431,12 +460,29 @@
         <span>🔒 Dados usados apenas para contato</span>
         <span>·</span>
         <span>📧 contato.olheai@gmail.com</span>
-        <span>·</span>
-        <span>📸 @Olheai123456</span>
+
       </div>
 
     </div><!-- /max-w -->
   </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#0F1F17] py-10 border-t border-white/10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded flex items-center justify-center bg-[#C9A84C]">
+          <span class="text-xs font-black text-green-950">ADA</span>
+        </div>
+        <span class="text-white/60 text-sm">ADA Agro</span>
+      </a>
+      <div class="flex items-center gap-6">
+        <a href="suinos.html" class="text-white/30 text-sm hover:text-[#C9A84C] transition-colors">SuinoCount AI</a>
+        <a href="gado.html" class="text-white/30 text-sm hover:text-[#C9A84C] transition-colors">BovinoSmart AI</a>
+        <a href="mailto:contato.olheai@gmail.com" class="text-white/30 text-sm hover:text-[#C9A84C] transition-colors">contato.olheai@gmail.com</a>
+      </div>
+      <p class="text-white/20 text-xs">© 2026 ADA Agro</p>
+    </div>
+  </footer>
 
   <script>
     // ──────────────────────────────
@@ -555,14 +601,14 @@
     // ──────────────────────────────
     function enviar() {
       const tipo = document.querySelector('input[name="tipo_criacao"]:checked');
-      const wifiSenha = document.getElementById('wifi_senha').value;
+      const nomeCliente = v('nome');
 
       const body = `
-ADA Agro — Nova Solicitação de Contratação
-==========================================
+NOVO CLIENTE ADA - Tarslabs
+============================
 
 DADOS DO CONTRATANTE
-Nome: ${v('nome')}
+Nome: ${nomeCliente}
 E-mail: ${v('email')}
 Telefone: ${v('telefone')}
 CPF/CNPJ: ${v('cpf_cnpj')}
@@ -572,7 +618,7 @@ Endereço: ${v('endereco')}
 CONFIGURAÇÃO DO DISPOSITIVO
 Nome do dispositivo: ${v('nome_device')}
 Rede Wi-Fi (SSID): ${v('wifi_ssid')}
-Senha Wi-Fi: ${wifiSenha}
+Senha Wi-Fi: Será configurada presencialmente pela equipe ADA
 Coordenadas GPS: ${v('gps')}
 Tipo de criação: ${tipo ? tipo.value : 'Não selecionado'}
 
@@ -580,9 +626,9 @@ Tipo de criação: ${tipo ? tipo.value : 'Não selecionado'}
 Enviado via formulário ADA Agro — ada-landing
       `.trim();
 
-      const subject = encodeURIComponent('Nova Solicitação de Contratação — ADA Agro');
+      const subject = encodeURIComponent('NOVO CLIENTE ADA - Tarslabs - ' + nomeCliente);
       const bodyEncoded = encodeURIComponent(body);
-      window.location.href = `mailto:contato.olheai@gmail.com?subject=${subject}&body=${bodyEncoded}`;
+      window.location.href = `mailto:juanengml@gmail.com?subject=${subject}&body=${bodyEncoded}`;
 
       // Avança para tela de sucesso após curto delay
       setTimeout(() => showStep(4), 800);
@@ -592,7 +638,34 @@ Enviado via formulário ADA Agro — ada-landing
       return document.getElementById(id)?.value?.trim() || '';
     }
 
-    // Limpa erro ao digitar
+    // Máscaras de input
+    function maskTelefone(val) {
+      val = val.replace(/\D/g, '').substring(0, 11);
+      if (val.length > 6) return '(' + val.substring(0,2) + ') ' + val.substring(2,3) + ' ' + val.substring(3,7) + '-' + val.substring(7);
+      if (val.length > 2) return '(' + val.substring(0,2) + ') ' + val.substring(2);
+      if (val.length > 0) return '(' + val;
+      return '';
+    }
+
+    function maskCpfCnpj(val) {
+      val = val.replace(/\D/g, '');
+      if (val.length <= 11) {
+        val = val.substring(0, 11);
+        if (val.length > 9) return val.substring(0,3) + '.' + val.substring(3,6) + '.' + val.substring(6,9) + '-' + val.substring(9);
+        if (val.length > 6) return val.substring(0,3) + '.' + val.substring(3,6) + '.' + val.substring(6);
+        if (val.length > 3) return val.substring(0,3) + '.' + val.substring(3);
+        return val;
+      } else {
+        val = val.substring(0, 14);
+        if (val.length > 12) return val.substring(0,2) + '.' + val.substring(2,5) + '.' + val.substring(5,8) + '/' + val.substring(8,12) + '-' + val.substring(12);
+        if (val.length > 8) return val.substring(0,2) + '.' + val.substring(2,5) + '.' + val.substring(5,8) + '/' + val.substring(8);
+        if (val.length > 5) return val.substring(0,2) + '.' + val.substring(2,5) + '.' + val.substring(5);
+        if (val.length > 2) return val.substring(0,2) + '.' + val.substring(2);
+        return val;
+      }
+    }
+
+    // Limpa erro ao digitar + aplica máscaras
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.field-input').forEach(input => {
         input.addEventListener('input', () => {
@@ -602,6 +675,23 @@ Enviado via formulário ADA Agro — ada-landing
           if (err) err.classList.remove('visible');
         });
       });
+
+      document.getElementById('telefone').addEventListener('input', function() {
+        const pos = this.selectionStart;
+        const prev = this.value.length;
+        this.value = maskTelefone(this.value);
+        const diff = this.value.length - prev;
+        this.setSelectionRange(pos + diff, pos + diff);
+      });
+
+      document.getElementById('cpf_cnpj').addEventListener('input', function() {
+        const pos = this.selectionStart;
+        const prev = this.value.length;
+        this.value = maskCpfCnpj(this.value);
+        const diff = this.value.length - prev;
+        this.setSelectionRange(pos + diff, pos + diff);
+      });
+
       document.querySelectorAll('input[name="tipo_criacao"]').forEach(r => {
         r.addEventListener('change', () => {
           document.getElementById('err-tipo').classList.remove('visible');

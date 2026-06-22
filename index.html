@@ -3,8 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ADA — Automação de Dados Agropecuários</title>
-  <meta name="description" content="ADA: Automação de Dados Agropecuários por ADA. Tecnologia de visão computacional com IA para pecuária de precisão. Contagem, pesagem e monitoramento de animais em tempo real." />
+  <title>ADA — Automação de Dados Agropecuários | Pecuária de Precisão com IA</title>
+  <meta name="description" content="Plataforma brasileira de visão computacional com IA para pecuária de precisão. Contagem automática de suínos e bovinos em tempo real, pesagem por segmentação, monitoramento 24h e relatórios inteligentes. Conheça os módulos SuinoCount AI e BovinoSmart AI." />
+  <meta name="keywords" content="contagem de animais, pecuária de precisão, visão computacional, IA agropecuária, contagem de suínos, contagem de bovinos, pesagem por IA, suinocultura de precisão, monitoramento de rebanho, agrotecnologia Brasil" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://g45p4r82.github.io/ada-landing/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ADA — Automação de Dados Agropecuários | Pecuária de Precisão com IA" />
+  <meta property="og:description" content="Plataforma brasileira de visão computacional com IA para pecuária de precisão. Contagem, pesagem e monitoramento de suínos e bovinos em tempo real." />
+  <meta property="og:url" content="https://g45p4r82.github.io/ada-landing/" />
+  <meta property="og:site_name" content="ADA Agro" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="ADA — Pecuária de Precisão com IA" />
+  <meta name="twitter:description" content="Contagem automática, pesagem por IA e monitoramento 24h de suínos e bovinos. Tecnologia brasileira para o campo." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='6' fill='%23C9A84C'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='900' font-size='14' fill='%230F1F17'%3EADA%3C/text%3E%3C/svg%3E" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -13,7 +33,7 @@
           colors: {
             forest: {
               50:  '#f0f7f2',
-              100: '#d8edd e',
+               100: '#d8edde',
               900: '#1B3A2D',
               950: '#0F1F17',
             },
@@ -133,6 +153,10 @@
       transition: color 0.2s;
     }
     .nav-link:hover { color: var(--gold); }
+
+    /* Mobile menu */
+    .mobile-menu { display: none; }
+    .mobile-menu.open { display: block; }
   </style>
 
   <script type="application/ld+json">
@@ -143,12 +167,14 @@
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "description": "Plataforma de visão computacional com IA para pecuária de precisão: contagem, pesagem e monitoramento de animais em tempo real.",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+    "offers": { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "BRL" }, "availability": "https://schema.org/OnlineOnly" },
     "provider": {
       "@type": "Organization",
       "name": "ADA Agro",
-      "email": "contato.olheai@gmail.com"
-    }
+      "email": "contato.olheai@gmail.com",
+      "url": "https://g45p4r82.github.io/ada-landing/"
+    },
+    "keywords": "contagem de animais, pecuária de precisão, visão computacional, IA agropecuária, suinocultura, bovinocultura"
   }
   </script>
 </head>
@@ -172,7 +198,19 @@
         <a href="#numeros" class="nav-link">Resultados</a>
         <a href="#contato" class="nav-link">Contato</a>
       </div>
-      <a href="contratar.html" class="btn-gold text-sm">Contratar</a>
+      <div class="flex items-center gap-4">
+        <a href="contratar.html" class="btn-gold text-sm">Contratar</a>
+        <button onclick="document.getElementById('mobileMenu').classList.toggle('open')" class="md:hidden text-white/70 hover:text-white" aria-label="Abrir menu de navegação">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Nav -->
+    <div id="mobileMenu" class="mobile-menu md:hidden border-t border-white/10 px-6 py-4 space-y-3">
+      <a href="#produtos" class="nav-link block">Produtos</a>
+      <a href="#tecnologia" class="nav-link block">Tecnologia</a>
+      <a href="#numeros" class="nav-link block">Resultados</a>
+      <a href="#contato" class="nav-link block">Contato</a>
     </div>
   </nav>
 
@@ -201,7 +239,7 @@
           <a href="#produtos" class="btn-outline-gold">Conhecer Produtos</a>
         </div>
       </div>
-      <div class="hidden md:flex flex-col gap-4">
+      <div class="flex flex-col gap-4 mt-8 md:mt-0">
         <!-- Stats card -->
         <div class="bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm">
           <div class="flex items-center gap-3 mb-4">
@@ -314,7 +352,7 @@
       <div class="grid md:grid-cols-3 gap-6">
 
         <div class="product-card">
-          <div class="text-gold text-3xl mb-4">◈</div>
+          <div class="text-gold text-3xl mb-4" aria-hidden="true">◈</div>
           <h3 class="text-white font-bold text-lg mb-3">Modelo Proprietário de Visão Computacional</h3>
           <p class="text-white/50 text-sm leading-relaxed">
             Modelo desenvolvido internamente, baseado no estado da arte do mercado e treinado com dados reais de suínos e bovinos brasileiros. Detecção precisa mesmo em ambientes com baixa iluminação, poeira e movimento.
@@ -322,7 +360,7 @@
         </div>
 
         <div class="product-card">
-          <div class="text-gold text-3xl mb-4">⟳</div>
+          <div class="text-gold text-3xl mb-4" aria-hidden="true">⟳</div>
           <h3 class="text-white font-bold text-lg mb-3">Processamento em Tempo Real</h3>
           <p class="text-white/50 text-sm leading-relaxed">
             Pipeline de vídeo com streaming RTSP e HLS. Contagem e análise acontecem no próprio dispositivo — sem depender de nuvem para cada frame processado.
@@ -330,7 +368,7 @@
         </div>
 
         <div class="product-card">
-          <div class="text-gold text-3xl mb-4">⊞</div>
+          <div class="text-gold text-3xl mb-4" aria-hidden="true">⊞</div>
           <h3 class="text-white font-bold text-lg mb-3">Linha Virtual Configurável</h3>
           <p class="text-white/50 text-sm leading-relaxed">
             O produtor define onde a linha de contagem vai ficar — diretamente na tela. Cada animal que cruzar é registrado automaticamente, sem operação manual.
@@ -338,7 +376,7 @@
         </div>
 
         <div class="product-card">
-          <div class="text-gold text-3xl mb-4">⬡</div>
+          <div class="text-gold text-3xl mb-4" aria-hidden="true">⬡</div>
           <h3 class="text-white font-bold text-lg mb-3">Pesagem por Segmentação IA</h3>
           <p class="text-white/50 text-sm leading-relaxed">
             Estimativa de peso vivo via análise do contorno corporal do animal. Sem balança — sem estresse no rebanho. Avaliação visual com precisão de modelo.
@@ -346,7 +384,7 @@
         </div>
 
         <div class="product-card">
-          <div class="text-gold text-3xl mb-4">☁</div>
+          <div class="text-gold text-3xl mb-4" aria-hidden="true">☁</div>
           <h3 class="text-white font-bold text-lg mb-3">Dashboard Web em Tempo Real</h3>
           <p class="text-white/50 text-sm leading-relaxed">
             Acompanhe contagens, relatórios e alertas de qualquer dispositivo via navegador. Dados sincronizados via WebSocket — sem precisar atualizar a página.
@@ -354,7 +392,7 @@
         </div>
 
         <div class="product-card">
-          <div class="text-gold text-3xl mb-4">⊛</div>
+          <div class="text-gold text-3xl mb-4" aria-hidden="true">⊛</div>
           <h3 class="text-white font-bold text-lg mb-3">Suporte e Operação Conjunta</h3>
           <p class="text-white/50 text-sm leading-relaxed">
             Não entregamos um sistema e sumimos. Estamos presentes na implantação, no ajuste fino dos modelos e no acompanhamento da operação do dia a dia.
@@ -487,14 +525,10 @@
           <ul class="space-y-3">
             <li>
               <a href="mailto:contato.olheai@gmail.com" class="text-white/40 text-sm hover:text-gold transition-colors flex items-center gap-2">
-                <span>✉</span> contato.olheai@gmail.com
+                <span aria-hidden="true">✉</span> contato.olheai@gmail.com
               </a>
             </li>
-            <li>
-              <a href="https://instagram.com/Olheai123456" target="_blank" rel="noopener" class="text-white/40 text-sm hover:text-gold transition-colors flex items-center gap-2">
-                <span>◎</span> @Olheai123456
-              </a>
-            </li>
+
           </ul>
         </div>
       </div>
