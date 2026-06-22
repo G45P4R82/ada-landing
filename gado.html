@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BovinoSmart AI — Monitoramento Inteligente de Bovinos | ADA</title>
+  <meta name="description" content="BovinoSmart AI: monitoramento inteligente de bovinos com visão computacional. Contagem no brete, identificação de raça e porte, detecção de anomalias. Tecnologia ADA para pecuária de precisão." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --forest: #1B3A2D;
+      --forest-dark: #0F1F17;
+      --gold: #C9A84C;
+    }
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .hero-gradient {
+      background: linear-gradient(135deg, #052e16 0%, #14532d 50%, #166534 100%);
+    }
+    .bg-forest-dark { background-color: var(--forest-dark); }
+    .text-gold { color: var(--gold); }
+    .gold-line { width: 60px; height: 3px; background: var(--gold); display: inline-block; }
+    .btn-gold {
+      background: var(--gold);
+      color: #0F1F17;
+      font-weight: 700;
+      padding: 0.85rem 2.2rem;
+      border-radius: 4px;
+      transition: background 0.2s ease, transform 0.2s ease;
+      display: inline-block;
+      letter-spacing: 0.03em;
+    }
+    .btn-gold:hover { background: #d4aa50; transform: translateY(-2px); }
+    .btn-outline {
+      border: 2px solid rgba(255,255,255,0.4);
+      color: white;
+      font-weight: 600;
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+    .stat-number { font-size: 3rem; font-weight: 900; color: var(--gold); line-height: 1; }
+    .nav-link {
+      color: rgba(255,255,255,0.75);
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--gold); }
+    .feature-card {
+      border-top: 3px solid #15803d;
+      background: white;
+      border-radius: 8px;
+      padding: 1.75rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+      transition: all 0.25s ease;
+    }
+    .feature-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
+    .section-dark { background-color: #0F1F17; }
+    .coming-soon-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 100px;
+      padding: 4px 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "BovinoSmart AI",
+    "applicationCategory": "BusinessApplication",
+    "description": "Monitoramento inteligente de bovinos com visão computacional. Contagem no brete, identificação de raça e porte, detecção de anomalias comportamentais.",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+    "provider": { "@type": "Organization", "name": "ADA Agro", "email": "contato.olheai@gmail.com" }
+  }
+  </script>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- NAVBAR -->
+  <nav class="bg-[#0F1F17] sticky top-0 z-50 border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded flex items-center justify-center bg-[#C9A84C]">
+          <span class="text-sm font-black text-green-950">ADA</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-white font-bold text-lg tracking-wide">ADA</span>
+          <span class="text-white/30 text-sm">/</span>
+          <span class="text-green-400 font-semibold text-sm">BovinoSmart AI</span>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="nav-link">Início</a>
+        <a href="#funcionalidades" class="nav-link">Funcionalidades</a>
+        <a href="suinos.html" class="nav-link">SuinoCount AI</a>
+      </div>
+      <a href="contratar.html" class="btn-gold text-sm">Contratar</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-gradient py-24 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+    <div class="relative max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="inline-block bg-white/10 border border-white/20 rounded px-3 py-1 mb-6">
+          <span class="text-white/80 text-xs font-semibold tracking-widest uppercase">Pecuária de Precisão</span>
+        </div>
+        <h1 class="text-5xl md:text-6xl font-black text-white leading-tight mb-6">
+          Pecuária de<br/>
+          <span class="text-[#C9A84C]">Precisão</span><br/>
+          ao Seu Alcance.
+        </h1>
+        <p class="text-white/65 text-lg leading-relaxed mb-8 max-w-lg">
+          BovinoSmart AI monitora seu rebanho bovino com visão computacional — do brete ao pasto. Contagem automática, identificação de raça e porte, e detecção de anomalias comportamentais em tempo real.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="contratar.html" class="btn-gold">Solicitar orçamento</a>
+          <a href="#funcionalidades" class="btn-outline">Ver funcionalidades</a>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-white/10 border border-white/15 rounded-lg p-5 backdrop-blur-sm">
+          <div class="stat-number mb-1">24h</div>
+          <div class="text-white/50 text-xs uppercase tracking-wider">Monitoramento</div>
+        </div>
+        <div class="bg-white/10 border border-white/15 rounded-lg p-5 backdrop-blur-sm">
+          <div class="stat-number mb-1">0</div>
+          <div class="text-white/50 text-xs uppercase tracking-wider">Erros de contagem</div>
+        </div>
+        <div class="bg-white/10 border border-white/15 rounded-lg p-5 backdrop-blur-sm col-span-2">
+          <div class="flex items-center gap-2 mb-2">
+            <div class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></div>
+            <span class="text-white/60 text-xs font-medium uppercase tracking-wider">Vídeos em breve</span>
+          </div>
+          <p class="text-white/40 text-sm">Demonstrações de gado estão em produção. Entre em contato para uma apresentação personalizada.</p>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
+  </section>
+
+  <!-- DEMO PLACEHOLDER -->
+  <section class="bg-white py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <span class="gold-line mb-4 block mx-auto"></span>
+        <h2 class="text-4xl font-black text-gray-900 mb-4">Demonstração em Vídeo</h2>
+        <p class="text-gray-500 max-w-xl mx-auto text-lg">
+          Vídeos de demonstração com bovinos em produção.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Placeholder 1 -->
+        <div>
+          <div class="relative rounded-xl overflow-hidden bg-gradient-to-br from-green-950 to-green-800 aspect-video flex flex-col items-center justify-center mb-4 border border-green-700/30">
+            <span class="coming-soon-badge mb-4">Em breve</span>
+            <p class="text-white/60 text-center text-sm max-w-xs">Contagem de bovinos no brete com linha virtual configurável</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded flex-shrink-0 flex items-center justify-center bg-green-100 mt-0.5">
+              <span class="text-green-700 text-sm font-black">1</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 mb-1">Contagem no Brete — Tempo Real</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">Cada bovino que passa pelo brete é detectado e contado automaticamente, com registro histórico no dashboard.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Placeholder 2 -->
+        <div>
+          <div class="relative rounded-xl overflow-hidden bg-gradient-to-br from-green-950 to-green-800 aspect-video flex flex-col items-center justify-center mb-4 border border-green-700/30">
+            <span class="coming-soon-badge mb-4">Em breve</span>
+            <p class="text-white/60 text-center text-sm max-w-xs">Monitoramento em pasto — detecção de anomalias comportamentais</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded flex-shrink-0 flex items-center justify-center bg-green-100 mt-0.5">
+              <span class="text-green-700 text-sm font-black">2</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 mb-1">Monitoramento em Pasto</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">Detecção de comportamentos atípicos, separação de animais e monitoramento contínuo do lote em campo aberto.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-10 text-center">
+        <p class="text-gray-400 text-sm mb-4">Quer ver uma demonstração personalizada para sua fazenda?</p>
+        <a href="mailto:contato.olheai@gmail.com" class="btn-gold">Solicitar apresentação</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUNCIONALIDADES -->
+  <section id="funcionalidades" class="bg-gray-50 py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <span class="gold-line mb-4 block mx-auto"></span>
+        <h2 class="text-4xl font-black text-gray-900 mb-4">O que o BovinoSmart AI faz</h2>
+        <p class="text-gray-500 max-w-xl mx-auto text-lg">
+          Desenvolvido para as condições reais da pecuária brasileira — do confinamento ao pasto.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <div class="feature-card">
+          <div class="text-green-700 text-2xl mb-3">◈</div>
+          <h3 class="font-bold text-gray-900 mb-2">Contagem no Brete</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Contagem automática e sem falha de bovinos que passam pelo brete. Linha virtual configurável — sem hardware adicional além da câmera.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="text-green-700 text-2xl mb-3">⊡</div>
+          <h3 class="font-bold text-gray-900 mb-2">Identificação de Raça e Porte</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Classificação automática por porte e características visuais do animal. Diferenciação de categorias do lote sem manejo manual.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="text-green-700 text-2xl mb-3">⬡</div>
+          <h3 class="font-bold text-gray-900 mb-2">Detecção de Anomalias</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Alertas automáticos para comportamentos atípicos — animal isolado, queda, claudicação. Intervenção precoce antes do problema se agravar.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="text-green-700 text-2xl mb-3">☁</div>
+          <h3 class="font-bold text-gray-900 mb-2">Dashboard em Tempo Real</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Acompanhe seu rebanho de qualquer lugar via navegador. Alertas, contagens e métricas sincronizados em tempo real.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="text-green-700 text-2xl mb-3">⟳</div>
+          <h3 class="font-bold text-gray-900 mb-2">Relatórios e Exportação</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Histórico completo de contagens, alertas e eventos por câmera e por lote. Exportação de dados para sistemas de gestão da propriedade.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="text-green-700 text-2xl mb-3">⊛</div>
+          <h3 class="font-bold text-gray-900 mb-2">Suporte Operacional</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Implantação acompanhada, calibração dos modelos para seu rebanho específico e suporte contínuo na operação. Não é só um software — é uma parceria.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="section-dark py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <span class="gold-line mb-4 block mx-auto"></span>
+        <h2 class="text-4xl font-black text-white mb-4">Por que escolher o BovinoSmart AI?</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="border border-white/10 rounded-lg p-8 bg-white/4">
+          <div class="w-12 h-12 rounded flex items-center justify-center bg-green-900/60 mb-4">
+            <span class="text-green-400 font-black text-lg">E</span>
+          </div>
+          <h3 class="font-bold text-white text-xl mb-3">Expertise</h3>
+          <p class="text-white/45 text-sm leading-relaxed">
+            Modelos desenvolvidos para bovinos brasileiros — Nelore, Angus, Girolando — em suas condições reais de campo, brete e confinamento.
+          </p>
+        </div>
+        <div class="border border-white/10 rounded-lg p-8 bg-white/4">
+          <div class="w-12 h-12 rounded flex items-center justify-center bg-green-900/60 mb-4">
+            <span class="text-green-400 font-black text-lg">A</span>
+          </div>
+          <h3 class="font-bold text-white text-xl mb-3">Autoridade</h3>
+          <p class="text-white/45 text-sm leading-relaxed">
+            Mesma infraestrutura validada no SuinoCount AI — pipeline YOLO + rastreamento em tempo real, agora adaptado para as particularidades do rebanho bovino.
+          </p>
+        </div>
+        <div class="border border-white/10 rounded-lg p-8 bg-white/4">
+          <div class="w-12 h-12 rounded flex items-center justify-center bg-green-900/60 mb-4">
+            <span class="text-green-400 font-black text-lg">C</span>
+          </div>
+          <h3 class="font-bold text-white text-xl mb-3">Confiança</h3>
+          <p class="text-white/45 text-sm leading-relaxed">
+            Dados do seu rebanho são seus. Monitoramento contínuo com histórico de 24 horas e suporte presente da implantação à operação diária.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="hero-gradient py-20 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+    <div class="relative max-w-2xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-black text-white mb-4">Modernize o controle do seu rebanho.</h2>
+      <p class="text-white/60 mb-8 text-lg">Orçamento sob consulta. Vamos entender sua operação antes de propor qualquer solução.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="contratar.html" class="btn-gold">Iniciar contratação</a>
+        <a href="mailto:contato.olheai@gmail.com" class="btn-outline">Enviar e-mail</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#0F1F17] py-10 border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded flex items-center justify-center bg-[#C9A84C]">
+          <span class="text-xs font-black text-green-950">ADA</span>
+        </div>
+        <span class="text-white/60 text-sm">ADA Agro · BovinoSmart AI</span>
+      </a>
+      <div class="flex items-center gap-6">
+        <a href="suinos.html" class="text-white/30 text-sm hover:text-[#C9A84C] transition-colors">SuinoCount AI</a>
+        <a href="contratar.html" class="text-white/30 text-sm hover:text-[#C9A84C] transition-colors">Contratar</a>
+        <a href="mailto:contato.olheai@gmail.com" class="text-white/30 text-sm hover:text-[#C9A84C] transition-colors">contato.olheai@gmail.com</a>
+        <a href="https://instagram.com/Olheai123456" target="_blank" rel="noopener" class="text-white/30 text-sm hover:text-[#C9A84C] transition-colors">@Olheai123456</a>
+      </div>
+      <p class="text-white/20 text-xs">© 2026 ADA Agro</p>
+    </div>
+  </footer>
+
+</body>
+</html>
