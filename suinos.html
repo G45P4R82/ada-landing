@@ -54,6 +54,19 @@
       letter-spacing: 0.03em;
     }
     .btn-gold:hover { background: #d4aa50; transform: translateY(-2px); }
+    .btn-outline-gold {
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      font-weight: 600;
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+      display: inline-block;
+    }
+    .btn-outline-gold:hover {
+      background: var(--gold);
+      color: #0F1F17;
+    }
     .btn-outline {
       border: 2px solid rgba(255,255,255,0.4);
       color: white;
@@ -167,7 +180,8 @@
         <a href="#funcionalidades" class="nav-link">Funcionalidades</a>
         <a href="gado.html" class="nav-link">BovinoSmart</a>
       </div>
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-3">
+        <a href="https://ada.ngrok.dev/login/" target="_blank" rel="noopener" class="hidden md:inline-block btn-outline-gold text-sm">Plataforma</a>
         <a href="contratar.html" class="btn-gold text-sm">Contratar</a>
         <button onclick="document.getElementById('mobileMenu').classList.toggle('open')" class="md:hidden text-white/70 hover:text-white" aria-label="Abrir menu de navegação">
           <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -179,6 +193,7 @@
       <a href="#demo" class="nav-link block">Demo</a>
       <a href="#funcionalidades" class="nav-link block">Funcionalidades</a>
       <a href="gado.html" class="nav-link block">BovinoSmart</a>
+      <a href="https://ada.ngrok.dev/login/" target="_blank" rel="noopener" class="nav-link block" style="color:var(--gold);">Plataforma</a>
     </div>
   </nav>
 
