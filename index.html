@@ -16,6 +16,10 @@
   <meta property="og:url" content="https://ada.tarslabs.io/" />
   <meta property="og:site_name" content="ADA Agro" />
   <meta property="og:locale" content="pt_BR" />
+  <meta property="og:image" content="https://ada.tarslabs.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://ada.tarslabs.io/og-image.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
@@ -174,6 +178,33 @@
   </style>
 
   <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ADA Agro",
+    "alternateName": "ADA — Automação de Dados Agropecuários",
+    "url": "https://ada.tarslabs.io/",
+    "email": "contato.olheai@gmail.com",
+    "sameAs": [
+      "https://www.instagram.com/tarslabs.agro/"
+    ],
+    "areaServed": {
+      "@type": "Country",
+      "name": "Brazil"
+    },
+    "knowsAbout": [
+      "contagem de suínos",
+      "suinocultura de precisão",
+      "visão computacional",
+      "pecuária de precisão",
+      "pesagem de suínos por IA",
+      "escore corporal suínos",
+      "contagem de bovinos",
+      "inteligência artificial agropecuária"
+    ],
+    "description": "Plataforma brasileira de visão computacional com IA para pecuária de precisão. Contagem automática, pesagem por segmentação e monitoramento 24h de suínos e bovinos."
+  },
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -189,7 +220,54 @@
       "url": "https://ada.tarslabs.io/"
     },
     "keywords": "contagem de animais, pecuária de precisão, visão computacional, IA agropecuária, suinocultura, bovinocultura"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O que é a ADA Agro?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A ADA (Automação de Dados Agropecuários) é uma plataforma brasileira de inteligência artificial que utiliza visão computacional para monitorar, contar e analisar suínos e bovinos em tempo real, 24 horas por dia. O sistema processa vídeo a 58 FPS com 99% de precisão na contagem, utilizando modelo proprietário treinado com dados reais de granjas e fazendas brasileiras."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como funciona a contagem automática de suínos da ADA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O SuinoCount AI utiliza câmeras IP convencionais posicionadas no galpão ou brete. O modelo de visão computacional proprietário detecta e rastreia cada suíno individualmente a 58 quadros por segundo. Uma linha virtual configurável pelo operador registra cada animal que cruza, sem contar o mesmo suíno duas vezes. Todo o processamento acontece no dispositivo local, sem depender de internet para cada frame."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quais são os módulos disponíveis na plataforma ADA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A ADA oferece dois módulos especializados: o SuinoCount AI, para contagem automática, pesagem por segmentação de IA e avaliação de escore corporal (BCS) de suínos; e o BovinoSmart AI, para contagem automática no brete, identificação de raça e porte, e detecção de anomalias comportamentais em bovinos como Nelore, Angus e Girolando."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Precisa de internet para o sistema de contagem funcionar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. O processamento de vídeo e a contagem acontecem no próprio dispositivo da ADA, sem depender de nuvem para cada frame processado. A internet é utilizada apenas para sincronizar dados com o dashboard web e gerar relatórios. O sistema foi desenvolvido para operar em condições reais do campo brasileiro, com ou sem internet estável."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qual a precisão da contagem automática de suínos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O SuinoCount AI alcança 99% de precisão na contagem automática de suínos, processando vídeo a 58 FPS em tempo real. O sistema foi validado em operações reais com granjas de até 3.200 matrizes, registrando zero divergências em romaneios ao longo de 6 meses de uso contínuo."
+        }
+      }
+    ]
   }
+]
   </script>
 </head>
 <body class="bg-white text-gray-900">
@@ -210,6 +288,7 @@
         <a href="#produtos" class="nav-link">Produtos</a>
         <a href="#tecnologia" class="nav-link">Tecnologia</a>
         <a href="#numeros" class="nav-link">Resultados</a>
+        <a href="#faq" class="nav-link">FAQ</a>
         <a href="#contato" class="nav-link">Contato</a>
       </div>
       <div class="flex items-center gap-3">
@@ -225,6 +304,7 @@
       <a href="#produtos" class="nav-link block">Produtos</a>
       <a href="#tecnologia" class="nav-link block">Tecnologia</a>
       <a href="#numeros" class="nav-link block">Resultados</a>
+      <a href="#faq" class="nav-link block">FAQ</a>
       <a href="#contato" class="nav-link block">Contato</a>
       <a href="https://ada.ngrok.dev/login/" target="_blank" rel="noopener" class="nav-link block" style="color:var(--gold);">Plataforma</a>
     </div>
@@ -494,6 +574,61 @@
     </div>
   </section>
 
+  <!-- FAQ - SEO/GEO -->
+  <section id="faq" class="section-light py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-14 reveal">
+        <span class="gold-line mb-4 block mx-auto"></span>
+        <h2 class="text-4xl font-black text-gray-900 mb-4">Perguntas Frequentes</h2>
+        <p class="text-gray-500 max-w-xl mx-auto text-lg">
+          Dúvidas comuns sobre a plataforma ADA e nossos módulos de visão computacional.
+        </p>
+      </div>
+      <div class="space-y-4">
+        <details class="bg-white border border-gray-100 rounded-lg shadow-sm reveal" open>
+          <summary class="px-6 py-5 cursor-pointer font-bold text-gray-900 hover:text-green-800 transition-colors">
+            O que é a ADA Agro?
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">
+            A ADA (Automação de Dados Agropecuários) é uma plataforma brasileira de inteligência artificial que utiliza visão computacional para monitorar, contar e analisar suínos e bovinos em tempo real, 24 horas por dia. O sistema processa vídeo a 58 FPS com 99% de precisão na contagem, utilizando modelo proprietário treinado com dados reais de granjas e fazendas brasileiras.
+          </div>
+        </details>
+        <details class="bg-white border border-gray-100 rounded-lg shadow-sm reveal reveal-delay-1">
+          <summary class="px-6 py-5 cursor-pointer font-bold text-gray-900 hover:text-green-800 transition-colors">
+            Como funciona a contagem automática de suínos?
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">
+            O SuinoCount AI utiliza câmeras IP convencionais posicionadas no galpão ou brete. O modelo de visão computacional proprietário detecta e rastreia cada suíno individualmente a 58 quadros por segundo. Uma linha virtual configurável pelo operador registra cada animal que cruza, sem contar o mesmo suíno duas vezes. Todo o processamento acontece no dispositivo local, sem depender de internet para cada frame.
+          </div>
+        </details>
+        <details class="bg-white border border-gray-100 rounded-lg shadow-sm reveal reveal-delay-1">
+          <summary class="px-6 py-5 cursor-pointer font-bold text-gray-900 hover:text-green-800 transition-colors">
+            Quais são os módulos disponíveis na plataforma ADA?
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">
+            A ADA oferece dois módulos especializados: o <strong>SuinoCount AI</strong>, para contagem automática, pesagem por segmentação de IA e avaliação de escore corporal (BCS) de suínos; e o <strong>BovinoSmart AI</strong>, para contagem automática no brete, identificação de raça e porte, e detecção de anomalias comportamentais em bovinos como Nelore, Angus e Girolando.
+          </div>
+        </details>
+        <details class="bg-white border border-gray-100 rounded-lg shadow-sm reveal reveal-delay-2">
+          <summary class="px-6 py-5 cursor-pointer font-bold text-gray-900 hover:text-green-800 transition-colors">
+            Precisa de internet para o sistema funcionar?
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">
+            Não. O processamento de vídeo e a contagem acontecem no próprio dispositivo da ADA, sem depender de nuvem para cada frame processado. A internet é utilizada apenas para sincronizar dados com o dashboard web e gerar relatórios. O sistema foi desenvolvido para operar em condições reais do campo brasileiro, com ou sem internet estável.
+          </div>
+        </details>
+        <details class="bg-white border border-gray-100 rounded-lg shadow-sm reveal reveal-delay-2">
+          <summary class="px-6 py-5 cursor-pointer font-bold text-gray-900 hover:text-green-800 transition-colors">
+            Qual a precisão da contagem automática?
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">
+            O SuinoCount AI alcança 99% de precisão na contagem automática de suínos, processando vídeo a 58 FPS em tempo real. O sistema foi validado em operações reais com granjas de até 3.200 matrizes, registrando zero divergências em romaneios ao longo de 6 meses de uso contínuo.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA FINAL -->
   <section class="hero-gradient py-24 relative overflow-hidden">
     <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(201,168,76,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.4) 1px, transparent 1px); background-size: 60px 60px;"></div>
@@ -534,6 +669,7 @@
             <li><a href="suinos.html" class="text-white/40 text-sm hover:text-gold transition-colors">SuinoCount AI</a></li>
             <li><a href="gado.html" class="text-white/40 text-sm hover:text-gold transition-colors">BovinoSmart AI</a></li>
             <li><a href="contratar.html" class="text-white/40 text-sm hover:text-gold transition-colors">Contratar</a></li>
+            <li><a href="blog/contagem-de-suinos.html" class="text-white/40 text-sm hover:text-gold transition-colors">Blog</a></li>
           </ul>
         </div>
         <div>
@@ -544,7 +680,11 @@
                 <span aria-hidden="true">✉</span> contato.olheai@gmail.com
               </a>
             </li>
-
+            <li>
+              <a href="https://www.instagram.com/tarslabs.agro/" target="_blank" rel="noopener" class="text-white/40 text-sm hover:text-gold transition-colors flex items-center gap-2">
+                <span aria-hidden="true">📷</span> @tarslabs.agro
+              </a>
+            </li>
           </ul>
         </div>
       </div>

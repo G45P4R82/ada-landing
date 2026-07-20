@@ -16,6 +16,10 @@
   <meta property="og:url" content="https://ada.tarslabs.io/suinos.html" />
   <meta property="og:site_name" content="ADA Agro" />
   <meta property="og:locale" content="pt_BR" />
+  <meta property="og:image" content="https://ada.tarslabs.io/og-suinos.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://ada.tarslabs.io/og-suinos.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
@@ -146,17 +150,112 @@
     .reveal-delay-3 { transition-delay: 0.3s; }
   </style>
   <script type="application/ld+json">
+[
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "SuinoCount AI",
     "applicationCategory": "BusinessApplication",
-    "description": "Sistema de contagem automática de suínos em tempo real com visão computacional proprietária. Pesagem por segmentação IA e avaliação de escore corporal.",
+    "description": "Sistema de contagem automática de suínos em tempo real com visão computacional proprietária. Pesagem por segmentação IA e avaliação de escore corporal. Processamento a 58 FPS com 99% de precisão.",
     "operatingSystem": "Web",
     "offers": { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "BRL" }, "availability": "https://schema.org/OnlineOnly" },
     "provider": { "@type": "Organization", "name": "ADA Agro", "email": "contato.olheai@gmail.com", "url": "https://ada.tarslabs.io/" },
-    "keywords": "contagem de suínos, suinocultura de precisão, pesagem por IA, escore corporal"
+    "keywords": "contagem de suínos, suinocultura de precisão, pesagem por IA, escore corporal, visão computacional suinocultura"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Como funciona a contagem automática de suínos por IA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O SuinoCount AI utiliza câmeras IP posicionadas no galpão ou brete da granja. Um modelo proprietário de visão computacional, treinado com dados reais de granjas brasileiras, detecta e rastreia cada suíno individualmente a 58 quadros por segundo. Uma linha virtual configurável pelo operador registra automaticamente cada animal que cruza, sem contar o mesmo suíno duas vezes. O processamento acontece no dispositivo local, sem depender de internet para cada frame."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qual a precisão do sistema de contagem de suínos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O SuinoCount AI alcança 99% de precisão na contagem automática, processando a 58 FPS em tempo real. Em operações reais com granjas de até 3.200 matrizes, o sistema registrou 100% de precisão verificada nos romaneios e zero divergências em 6 meses de uso contínuo. Mesmo em condições de baixa iluminação, poeira e animais em movimento rápido, o modelo mantém alta precisão."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como funciona a pesagem de suínos sem balança?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O SuinoCount AI estima o peso vivo dos suínos através de segmentação do contorno corporal por inteligência artificial. O modelo analisa a silhueta do animal capturada pela câmera e calcula o peso estimado com base em algoritmos de deep learning treinados especificamente para suínos brasileiros. Não é necessário balança, contenção ou qualquer contato com o animal, eliminando o estresse no rebanho."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O que é avaliação de escore corporal (BCS) de suínos por IA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O escore de condição corporal (BCS) é uma medida de 1 a 5 que indica o estado nutricional do suíno. O SuinoCount AI automatiza essa avaliação usando visão computacional, identificando animais abaixo ou acima do peso ideal sem exame manual. Os níveis ideais para suinocultura são entre 2,5 e 3,5 — porcas muito magras ou gordas apresentam problemas reprodutivos. O sistema permite intervenção precoce na nutrição."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Que tipo de câmera é necessário para a contagem de suínos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O SuinoCount AI funciona com qualquer câmera IP de mercado que suporte streaming RTSP. Não é necessário hardware especial — câmeras de segurança convencionais são suficientes. O sistema suporta múltiplas câmeras simultâneas, cada uma com sua própria linha de contagem configurável, cobrindo diferentes baias e galpões em uma única interface."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O sistema funciona sem internet na granja?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O processamento de vídeo e a contagem acontecem no próprio dispositivo ADA, localmente. Não depende de conexão com a nuvem para cada frame processado. A internet é necessária apenas para sincronizar dados com o dashboard web, enviar relatórios e permitir acesso remoto. O sistema foi projetado para condições reais do campo brasileiro, com ou sem internet estável."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Como implementar contagem automática de suínos na sua granja",
+    "description": "Passo a passo para implantar o sistema SuinoCount AI de contagem automática de suínos por visão computacional na sua granja.",
+    "totalTime": "PT48H",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Instalação da câmera IP",
+        "text": "Posicione uma câmera IP com streaming RTSP no galpão ou brete da granja, apontada para o corredor de passagem dos suínos. Qualquer câmera de mercado compatível é suficiente."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Conexão com o dispositivo ADA",
+        "text": "Conecte o dispositivo ADA à rede Wi-Fi da propriedade e configure o stream de vídeo RTSP da câmera. O processamento de visão computacional acontece localmente no dispositivo."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Configuração da linha virtual de contagem",
+        "text": "Defina a posição da linha virtual de contagem diretamente na interface do sistema. Cada animal que cruzar a linha será detectado, rastreado e registrado automaticamente."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Calibração do modelo de IA",
+        "text": "A equipe ADA realiza a calibração do modelo de visão computacional para o ambiente específico da sua granja — suas câmeras, iluminação e fluxo de animais."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "name": "Acompanhamento via dashboard",
+        "text": "Acesse o dashboard web em tempo real de qualquer dispositivo via navegador. Acompanhe contagens, relatórios e alertas com dados sincronizados via WebSocket."
+      }
+    ]
   }
+]
   </script>
 </head>
 <body class="bg-white text-gray-900">
@@ -178,6 +277,7 @@
         <a href="index.html" class="nav-link">Início</a>
         <a href="#demo" class="nav-link">Demo</a>
         <a href="#funcionalidades" class="nav-link">Funcionalidades</a>
+        <a href="#faq-suinos" class="nav-link">FAQ</a>
         <a href="gado.html" class="nav-link">BovinoSmart</a>
       </div>
       <div class="flex items-center gap-3">
@@ -531,6 +631,69 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SUÍNOS - SEO/GEO -->
+  <section id="faq-suinos" class="bg-white py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-14 reveal">
+        <span class="gold-line mb-4 block mx-auto"></span>
+        <h2 class="text-4xl font-black text-gray-900 mb-4">Perguntas Frequentes sobre Contagem de Suínos</h2>
+        <p class="text-gray-500 max-w-xl mx-auto text-lg">
+          Tudo sobre contagem automática, pesagem por IA e suinocultura de precisão.
+        </p>
+      </div>
+      <div class="space-y-4">
+        <details class="bg-gray-50 border border-gray-100 rounded-lg shadow-sm reveal" open>
+          <summary class="px-6 py-5 cursor-pointer font-bold text-gray-900 hover:text-sky-700 transition-colors">
+            Como funciona a contagem automática de suínos por IA?
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">
+            O SuinoCount AI utiliza câmeras IP posicionadas no galpão ou brete da granja. Um modelo proprietário de visão computacional, treinado com dados reais de granjas brasileiras, detecta e rastreia cada suíno individualmente a <strong>58 quadros por segundo</strong>. Uma linha virtual configurável pelo operador registra automaticamente cada animal que cruza, sem contar o mesmo suíno duas vezes. O processamento acontece no dispositivo local, sem depender de internet para cada frame.
+          </div>
+        </details>
+        <details class="bg-gray-50 border border-gray-100 rounded-lg shadow-sm reveal reveal-delay-1">
+          <summary class="px-6 py-5 cursor-pointer font-bold text-gray-900 hover:text-sky-700 transition-colors">
+            Qual a precisão do sistema de contagem de suínos?
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">
+            O SuinoCount AI alcança <strong>99% de precisão</strong> na contagem automática, processando a 58 FPS em tempo real. Em operações reais com granjas de até 3.200 matrizes, o sistema registrou 100% de precisão verificada nos romaneios e zero divergências em 6 meses de uso contínuo. Mesmo em condições de baixa iluminação, poeira e animais em movimento rápido, o modelo mantém alta precisão.
+          </div>
+        </details>
+        <details class="bg-gray-50 border border-gray-100 rounded-lg shadow-sm reveal reveal-delay-1">
+          <summary class="px-6 py-5 cursor-pointer font-bold text-gray-900 hover:text-sky-700 transition-colors">
+            Como funciona a pesagem de suínos sem balança?
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">
+            O SuinoCount AI estima o peso vivo dos suínos através de <strong>segmentação do contorno corporal</strong> por inteligência artificial. O modelo analisa a silhueta do animal capturada pela câmera e calcula o peso estimado com base em algoritmos de deep learning treinados especificamente para suínos brasileiros. Não é necessário balança, contenção ou qualquer contato com o animal, eliminando o estresse no rebanho.
+          </div>
+        </details>
+        <details class="bg-gray-50 border border-gray-100 rounded-lg shadow-sm reveal reveal-delay-2">
+          <summary class="px-6 py-5 cursor-pointer font-bold text-gray-900 hover:text-sky-700 transition-colors">
+            O que é avaliação de escore corporal (BCS) de suínos por IA?
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">
+            O escore de condição corporal (BCS) é uma medida de 1 a 5 que indica o estado nutricional do suíno. O SuinoCount AI automatiza essa avaliação usando visão computacional, identificando animais abaixo ou acima do peso ideal sem exame manual. Os níveis ideais para suinocultura são entre <strong>2,5 e 3,5</strong> — porcas muito magras ou gordas apresentam problemas reprodutivos. O sistema permite intervenção precoce na nutrição.
+          </div>
+        </details>
+        <details class="bg-gray-50 border border-gray-100 rounded-lg shadow-sm reveal reveal-delay-2">
+          <summary class="px-6 py-5 cursor-pointer font-bold text-gray-900 hover:text-sky-700 transition-colors">
+            Que tipo de câmera é necessário?
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">
+            O SuinoCount AI funciona com <strong>qualquer câmera IP de mercado</strong> que suporte streaming RTSP. Não é necessário hardware especial — câmeras de segurança convencionais são suficientes. O sistema suporta múltiplas câmeras simultâneas, cada uma com sua própria linha de contagem configurável, cobrindo diferentes baias e galpões em uma única interface.
+          </div>
+        </details>
+        <details class="bg-gray-50 border border-gray-100 rounded-lg shadow-sm reveal reveal-delay-3">
+          <summary class="px-6 py-5 cursor-pointer font-bold text-gray-900 hover:text-sky-700 transition-colors">
+            O sistema funciona sem internet na granja?
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">
+            Sim. O processamento de vídeo e a contagem acontecem <strong>no próprio dispositivo ADA, localmente</strong>. Não depende de conexão com a nuvem para cada frame processado. A internet é necessária apenas para sincronizar dados com o dashboard web, enviar relatórios e permitir acesso remoto. O sistema foi projetado para condições reais do campo brasileiro, com ou sem internet estável.
+          </div>
+        </details>
       </div>
     </div>
   </section>

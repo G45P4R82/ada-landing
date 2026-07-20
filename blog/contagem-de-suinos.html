@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contagem de Suínos com IA: Como Funciona, Benefícios e Resultados | ADA Agro</title>
+  <meta name="description" content="Entenda como a contagem automática de suínos por visão computacional e IA funciona na prática. Precisão de 99% a 58 FPS, sem erro humano. Conheça o SuinoCount AI da ADA Agro." />
+  <meta name="keywords" content="contagem de suínos, contagem automática suínos, contagem suínos IA, visão computacional suinocultura, SuinoCount AI, contagem animais granja, suinocultura de precisão" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ada.tarslabs.io/blog/contagem-de-suinos.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Contagem de Suínos com IA: Como Funciona, Benefícios e Resultados" />
+  <meta property="og:description" content="Entenda como a contagem automática de suínos por visão computacional e IA funciona na prática. Precisão de 99% a 58 FPS, sem erro humano." />
+  <meta property="og:url" content="https://ada.tarslabs.io/blog/contagem-de-suinos.html" />
+  <meta property="og:site_name" content="ADA Agro" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:image" content="https://ada.tarslabs.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-07-20" />
+  <meta property="article:author" content="Equipe ADA Agro" />
+  <meta name="twitter:image" content="https://ada.tarslabs.io/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contagem de Suínos com IA: Como Funciona, Benefícios e Resultados" />
+  <meta name="twitter:description" content="Contagem automática de suínos por visão computacional. 99% de precisão a 58 FPS, sem erro humano." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='6' fill='%23C9A84C'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='900' font-size='14' fill='%230F1F17'%3EADA%3C/text%3E%3C/svg%3E" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: { 50: '#f0f7f2', 100: '#d8edde', 900: '#1B3A2D', 950: '#0F1F17' },
+            gold: { 400: '#d4aa50', 500: '#C9A84C', 600: '#b8960c' }
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --forest: #1B3A2D;
+      --forest-dark: #0F1F17;
+      --gold: #C9A84C;
+      --gold-light: #d4aa50;
+      --cream: #F8FBF9;
+    }
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .bg-forest-dark { background-color: var(--forest-dark); }
+    .text-gold { color: var(--gold); }
+    .gold-line { width: 60px; height: 3px; background: var(--gold); display: inline-block; }
+    .btn-gold {
+      background: var(--gold); color: #0F1F17; font-weight: 700;
+      padding: 0.85rem 2.2rem; border-radius: 4px;
+      transition: background 0.2s ease, transform 0.2s ease;
+      display: inline-block; letter-spacing: 0.03em;
+    }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-outline-gold {
+      border: 2px solid var(--gold); color: var(--gold); font-weight: 600;
+      padding: 0.8rem 2rem; border-radius: 4px;
+      transition: all 0.2s ease; display: inline-block;
+    }
+    .btn-outline-gold:hover { background: var(--gold); color: #0F1F17; }
+    .nav-link {
+      color: rgba(255,255,255,0.75); font-weight: 500; font-size: 0.9rem;
+      letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--gold); }
+    .mobile-menu { display: none; }
+    .mobile-menu.open { display: block; }
+    .section-dark { background-color: #0F1F17; }
+    .section-light { background-color: #F8FBF9; }
+    .reveal {
+      opacity: 0; transform: translateY(32px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .prose h2 { font-size: 1.75rem; font-weight: 900; color: #111827; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .prose h3 { font-size: 1.25rem; font-weight: 700; color: #1f2937; margin-top: 1.75rem; margin-bottom: 0.75rem; }
+    .prose p { color: #4b5563; line-height: 1.8; margin-bottom: 1.25rem; }
+    .prose ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1.25rem; }
+    .prose ul li { color: #4b5563; line-height: 1.8; margin-bottom: 0.5rem; }
+    .prose strong { color: #111827; }
+    .prose a { color: var(--gold); text-decoration: underline; }
+    .prose a:hover { color: var(--gold-light); }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Contagem de Suínos com IA: Como Funciona, Benefícios e Resultados",
+    "description": "Entenda como a contagem automática de suínos por visão computacional e IA funciona na prática. Precisão de 99% a 58 FPS, sem erro humano.",
+    "author": {
+      "@type": "Organization",
+      "name": "ADA Agro",
+      "url": "https://ada.tarslabs.io/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ADA Agro",
+      "url": "https://ada.tarslabs.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://ada.tarslabs.io/og-image.png"
+      }
+    },
+    "datePublished": "2026-07-20",
+    "dateModified": "2026-07-20",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://ada.tarslabs.io/blog/contagem-de-suinos.html"
+    },
+    "keywords": "contagem de suínos, contagem automática suínos, visão computacional suinocultura, SuinoCount AI",
+    "inLanguage": "pt-BR"
+  }
+  </script>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- NAVBAR -->
+  <nav class="section-dark sticky top-0 z-50 border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="../index.html" class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded flex items-center justify-center bg-gold-500">
+          <span class="text-sm font-black text-green-950">ADA</span>
+        </div>
+        <div>
+          <span class="text-white font-bold text-lg tracking-wide">ADA</span>
+          <span class="hidden sm:inline text-white/40 text-xs ml-2 font-light tracking-widest uppercase">Agro</span>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="../index.html" class="nav-link">Início</a>
+        <a href="../suinos.html" class="nav-link">SuinoCount</a>
+        <a href="../gado.html" class="nav-link">BovinoSmart</a>
+        <a href="../contratar.html" class="nav-link">Contato</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="https://ada.ngrok.dev/login/" target="_blank" rel="noopener" class="hidden md:inline-block btn-outline-gold text-sm">Plataforma</a>
+        <a href="../contratar.html" class="btn-gold text-sm">Contratar</a>
+        <button onclick="document.getElementById('mobileMenu').classList.toggle('open')" class="md:hidden text-white/70 hover:text-white" aria-label="Abrir menu de navegação">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden border-t border-white/10 px-6 py-4 space-y-3">
+      <a href="../index.html" class="nav-link block">Início</a>
+      <a href="../suinos.html" class="nav-link block">SuinoCount</a>
+      <a href="../gado.html" class="nav-link block">BovinoSmart</a>
+      <a href="../contratar.html" class="nav-link block">Contato</a>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMBS -->
+  <div class="bg-gray-50 border-b border-gray-100">
+    <div class="max-w-4xl mx-auto px-6 py-3">
+      <nav class="text-sm text-gray-400" aria-label="Breadcrumb">
+        <a href="../index.html" class="hover:text-gold-500 transition-colors">Home</a>
+        <span class="mx-2">›</span>
+        <span class="text-gray-600">Blog</span>
+        <span class="mx-2">›</span>
+        <span class="text-gray-600">Contagem de Suínos com IA</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ARTICLE HEADER -->
+  <header class="bg-white py-16">
+    <div class="max-w-4xl mx-auto px-6 reveal">
+      <div class="inline-block bg-gold-500/10 border border-gold-500/30 rounded px-3 py-1 mb-6">
+        <span class="text-gold text-xs font-semibold tracking-widest uppercase">Suinocultura de Precisão</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-black text-gray-900 leading-tight mb-6">
+        Contagem de Suínos com IA: Como Funciona, Benefícios e Resultados
+      </h1>
+      <p class="text-gray-400 text-sm">
+        Publicado em 20 de julho de 2026 · Por Equipe ADA
+      </p>
+    </div>
+  </header>
+
+  <!-- ARTICLE CONTENT -->
+  <article class="bg-white pb-20">
+    <div class="max-w-4xl mx-auto px-6 prose">
+
+      <!-- Seção 1 -->
+      <section class="reveal">
+        <h2>Introdução: O Desafio da Contagem Manual de Suínos</h2>
+        <p>
+          Na suinocultura brasileira, a contagem de suínos ainda é, na maioria das granjas, uma operação manual. Funcionários posicionados em bretes, corredores ou porteiras contam visualmente cada animal que passa — um trabalho que, por mais simples que pareça, carrega uma série de problemas invisíveis que afetam diretamente a gestão do rebanho e a rentabilidade do negócio.
+        </p>
+        <p>
+          O primeiro problema é o <strong>erro humano</strong>. Quando um lote de 100, 150 ou 200 suínos passa por um brete em poucos minutos, a velocidade do fluxo torna praticamente impossível manter uma contagem perfeita. Animais se aglomeram, passam em duplas, voltam contra o fluxo. Um erro de três ou quatro cabeças em um único embarque pode parecer insignificante, mas ao longo de meses de operação, esses desvios se acumulam e geram divergências nos romaneios que custam dinheiro real — seja em faturamento perdido, seja em disputas com integradoras e frigoríficos.
+        </p>
+        <p>
+          O segundo problema é a <strong>recontagem</strong>. Quando o número não bate, a equipe precisa recontar. Isso significa fazer o lote inteiro passar novamente pelo brete, o que consome tempo, desgasta a equipe e, principalmente, estressa os animais. Suínos submetidos a movimentação excessiva apresentam maior incidência de lesões, perda de peso e queda na qualidade da carne — fatores que impactam diretamente o resultado financeiro da operação.
+        </p>
+        <p>
+          O terceiro problema é a <strong>falta de rastreabilidade</strong>. A contagem manual não gera registros confiáveis. Não há como auditar retroativamente se o número anotado no caderno ou na planilha corresponde ao que realmente aconteceu. Em um setor que caminha cada vez mais para a rastreabilidade total da cadeia, depender de anotações manuais é um risco operacional e comercial.
+        </p>
+        <p>
+          É nesse contexto que a <strong>contagem automática de suínos por inteligência artificial</strong> surge como uma solução que elimina esses três problemas de uma vez — e é sobre isso que trataremos em profundidade neste artigo.
+        </p>
+      </section>
+
+      <!-- Seção 2 -->
+      <section class="reveal">
+        <h2>O Que é Contagem Automática de Suínos por IA</h2>
+        <p>
+          A contagem automática de suínos por IA é um sistema que utiliza <strong>visão computacional</strong> — um ramo da inteligência artificial especializado em interpretar imagens e vídeos — para detectar, rastrear e contar cada animal individualmente, sem intervenção humana.
+        </p>
+        <p>
+          Na prática, o sistema funciona assim: uma câmera IP convencional é posicionada em um ponto estratégico do galpão, brete ou corredor de passagem. O vídeo capturado pela câmera é processado em tempo real por um modelo de <strong>deep learning</strong> (aprendizado profundo) que foi treinado especificamente para reconhecer suínos em condições reais de granja — com variações de iluminação, poeira, movimento rápido e aglomeração.
+        </p>
+        <p>
+          Diferente de sensores infravermelhos ou sistemas baseados em peso que contam "passagens" genéricas, a visão computacional identifica cada suíno como uma entidade individual. O modelo distingue um animal do outro, rastreia sua trajetória no campo de visão da câmera e registra o exato momento em que ele cruza uma <strong>linha virtual de contagem</strong> — uma referência definida pelo operador diretamente na tela do sistema.
+        </p>
+        <p>
+          Esse tipo de abordagem tem uma vantagem fundamental: <strong>não conta o mesmo animal duas vezes</strong>. Se um suíno cruza a linha e depois retorna, o algoritmo de rastreamento reconhece que se trata do mesmo indivíduo e ajusta a contagem automaticamente. Isso elimina a principal fonte de erro da contagem manual.
+        </p>
+      </section>
+
+      <!-- Seção 3 -->
+      <section class="reveal">
+        <h2>Como Funciona o SuinoCount AI</h2>
+        <p>
+          O <a href="../suinos.html">SuinoCount AI</a> é o módulo de contagem automática de suínos da plataforma <strong>ADA — Automação de Dados Agropecuários</strong>. Desenvolvido no Brasil, com dados reais de granjas brasileiras, o sistema foi projetado para operar nas condições específicas da suinocultura nacional.
+        </p>
+        <p>
+          O pipeline de funcionamento segue quatro etapas:
+        </p>
+
+        <h3>1. Câmera IP</h3>
+        <p>
+          O sistema recebe o stream de vídeo via protocolo <strong>RTSP</strong> (Real Time Streaming Protocol), compatível com a maioria das câmeras IP de mercado. Não é necessário comprar câmeras especiais — as câmeras que a granja já possui em muitos casos são suficientes. A câmera é posicionada no ponto de passagem dos animais, como bretes de embarque, corredores de transferência ou saídas de baias.
+        </p>
+
+        <h3>2. Modelo Proprietário de Visão Computacional</h3>
+        <p>
+          O vídeo é processado por um <strong>modelo de deep learning proprietário</strong>, baseado no estado da arte em detecção de objetos e rastreamento multi-objeto. O modelo foi treinado com milhares de imagens e vídeos reais de suínos em granjas brasileiras, o que garante alta precisão mesmo em cenários difíceis: baixa iluminação, suínos de cor e tamanho semelhantes, aglomeração no brete e movimento rápido.
+        </p>
+        <p>
+          O processamento acontece a <strong>58 quadros por segundo (FPS)</strong>, o que significa que o sistema analisa 58 imagens a cada segundo de vídeo. Essa velocidade é essencial para manter a precisão mesmo quando os animais passam rapidamente pela câmera.
+        </p>
+
+        <h3>3. Linha Virtual de Contagem</h3>
+        <p>
+          O operador configura, diretamente na interface do sistema, uma <strong>linha virtual</strong> sobre o campo de visão da câmera. Cada vez que o algoritmo de rastreamento detecta que um suíno cruzou essa linha, a contagem é incrementada. A linha é configurável — pode ser posicionada horizontalmente, verticalmente ou em diagonal, de acordo com o layout do brete ou corredor.
+        </p>
+
+        <h3>4. Dashboard em Tempo Real</h3>
+        <p>
+          Cada evento de contagem é registrado com <strong>data, hora, câmera de origem e ID de rastreamento</strong>. Os dados são exibidos em tempo real no dashboard web da ADA, acessível de qualquer dispositivo com navegador. A atualização é via <strong>WebSocket</strong> — sem necessidade de recarregar a página. O sistema mantém um histórico completo de contagens para consulta, auditoria e exportação de relatórios.
+        </p>
+        <p>
+          Todo o processamento de vídeo acontece <strong>no dispositivo local</strong>, sem depender de conexão com a nuvem para cada frame. Isso torna o sistema viável mesmo em propriedades rurais com internet instável ou limitada.
+        </p>
+      </section>
+
+      <!-- Seção 4 -->
+      <section class="reveal">
+        <h2>Benefícios da Contagem Automática de Suínos</h2>
+        <p>
+          A adoção de um sistema de contagem automática por IA traz benefícios que vão muito além de "não precisar contar na mão". Os principais impactos são:
+        </p>
+        <ul>
+          <li><strong>Eliminação do erro humano:</strong> O sistema opera com <strong>99% de precisão</strong> comprovada em campo. Não há fadiga, distração ou dúvida. O número registrado é o número real.</li>
+          <li><strong>Operação 24 horas por dia:</strong> Diferente de um funcionário que conta em horários específicos, o sistema monitora continuamente. Qualquer movimentação fora do horário planejado é registrada e pode gerar alertas automáticos.</li>
+          <li><strong>Zero estresse animal:</strong> Sem recontagens, os animais passam pelo brete uma única vez. Menos movimentação significa menos lesões, menos perda de peso e melhor qualidade de carne no abate.</li>
+          <li><strong>Dados rastreáveis e auditáveis:</strong> Cada contagem tem registro com timestamp, câmera e condições. Isso permite auditoria retroativa, resolução de divergências com frigoríficos e integração com sistemas de gestão (ERP) da propriedade.</li>
+          <li><strong>Integração com ERP:</strong> Os dados de contagem podem ser exportados e integrados aos sistemas de gestão já utilizados pela granja, eliminando a necessidade de digitação manual e reduzindo o risco de erros na cadeia de informação.</li>
+          <li><strong>Redução de mão de obra alocada:</strong> A equipe que antes era designada exclusivamente para contagem pode ser realocada para atividades de maior valor na operação.</li>
+        </ul>
+      </section>
+
+      <!-- Seção 5 -->
+      <section class="reveal">
+        <h2>Resultados Reais: Cases de Sucesso</h2>
+        <p>
+          O SuinoCount AI foi validado em operações reais da suinocultura brasileira. Dois cases ilustram os resultados alcançados:
+        </p>
+
+        <h3>Granja São Miguel — Toledo, PR</h3>
+        <p>
+          Operação de ciclo completo com 3.200 matrizes. Antes do SuinoCount AI, a equipe relatava divergências frequentes nos romaneios de embarque — diferenças de 2 a 5 cabeças por lote que geravam recontagens e atrasos.
+        </p>
+        <p>
+          Após a implantação do sistema, a granja registrou <strong>100% de precisão verificada nos romaneios</strong> e <strong>zero divergências em 6 meses de uso contínuo</strong>. O gerente de produção, Roberto Almeida, relatou que a equipe passou a consultar o dashboard antes de fechar o romaneio, eliminando completamente a necessidade de recontagem.
+        </p>
+
+        <h3>Suínos Boa Vista — Concórdia, SC</h3>
+        <p>
+          Unidade de Produção de Leitões (UPL) com 1.800 matrizes. O principal desafio era o controle de transferência entre galpões — garantir que o número de animais que saiu de um lado era exatamente o que chegou do outro.
+        </p>
+        <p>
+          Com a instalação de <strong>3 câmeras em pontos críticos de fluxo</strong>, o sistema passou a registrar cada movimentação com <strong>histórico de 24 horas rastreável</strong>. A coordenadora de logística, Cláudia Ferreira, destacou que qualquer divergência agora pode ser investigada com precisão — sabe-se exatamente onde e quando olhar.
+        </p>
+      </section>
+
+      <!-- Seção 6 -->
+      <section class="reveal">
+        <h2>Comparação: Contagem Manual vs. Contagem Automática</h2>
+        <div class="overflow-x-auto my-8">
+          <table class="w-full border-collapse text-sm">
+            <thead>
+              <tr class="bg-forest-950 text-white">
+                <th class="text-left py-3 px-4 font-semibold rounded-tl-lg">Critério</th>
+                <th class="text-left py-3 px-4 font-semibold">Contagem Manual</th>
+                <th class="text-left py-3 px-4 font-semibold rounded-tr-lg">Contagem Automática (IA)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 px-4 font-medium text-gray-900">Precisão</td>
+                <td class="py-3 px-4 text-gray-500">85–95% (varia com fadiga e fluxo)</td>
+                <td class="py-3 px-4 text-gray-500">99% comprovado em campo</td>
+              </tr>
+              <tr class="border-b border-gray-100 bg-gray-50">
+                <td class="py-3 px-4 font-medium text-gray-900">Velocidade</td>
+                <td class="py-3 px-4 text-gray-500">Limitada pela capacidade humana</td>
+                <td class="py-3 px-4 text-gray-500">58 FPS — tempo real</td>
+              </tr>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 px-4 font-medium text-gray-900">Disponibilidade</td>
+                <td class="py-3 px-4 text-gray-500">Horário comercial, com pausas</td>
+                <td class="py-3 px-4 text-gray-500">24 horas, 7 dias por semana</td>
+              </tr>
+              <tr class="border-b border-gray-100 bg-gray-50">
+                <td class="py-3 px-4 font-medium text-gray-900">Estresse animal</td>
+                <td class="py-3 px-4 text-gray-500">Recontagens frequentes</td>
+                <td class="py-3 px-4 text-gray-500">Zero recontagens necessárias</td>
+              </tr>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 px-4 font-medium text-gray-900">Rastreabilidade</td>
+                <td class="py-3 px-4 text-gray-500">Anotações manuais, sem auditoria</td>
+                <td class="py-3 px-4 text-gray-500">Registro com timestamp e câmera</td>
+              </tr>
+              <tr class="border-b border-gray-100 bg-gray-50">
+                <td class="py-3 px-4 font-medium text-gray-900">Custo recorrente</td>
+                <td class="py-3 px-4 text-gray-500">Mão de obra dedicada permanente</td>
+                <td class="py-3 px-4 text-gray-500">Operação automatizada</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-medium text-gray-900">Integração ERP</td>
+                <td class="py-3 px-4 text-gray-500">Digitação manual dos dados</td>
+                <td class="py-3 px-4 text-gray-500">Exportação automática</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Seção 7 -->
+      <section class="reveal">
+        <h2>Como Implementar a Contagem Automática na Sua Granja</h2>
+        <p>
+          A implementação do SuinoCount AI é um processo estruturado em cinco etapas, conduzido em conjunto pela equipe técnica da ADA e pela equipe operacional da granja:
+        </p>
+
+        <h3>Etapa 1: Avaliação e Posicionamento da Câmera</h3>
+        <p>
+          A equipe técnica avalia os pontos de passagem dos animais na granja — bretes de embarque, corredores de transferência, saídas de baias — e define o posicionamento ideal da câmera IP. Em muitos casos, câmeras já existentes na propriedade podem ser aproveitadas, desde que suportem stream RTSP.
+        </p>
+
+        <h3>Etapa 2: Instalação do Dispositivo de Processamento</h3>
+        <p>
+          O dispositivo ADA é instalado na propriedade. Ele recebe o stream de vídeo da câmera e executa o modelo de visão computacional localmente — sem depender de internet para o processamento de cada frame. A instalação é física e não requer infraestrutura de TI complexa.
+        </p>
+
+        <h3>Etapa 3: Configuração da Linha Virtual</h3>
+        <p>
+          O operador da granja, junto com a equipe ADA, configura a linha virtual de contagem diretamente na interface do sistema. A posição da linha é ajustada de acordo com o fluxo natural dos animais no ponto monitorado.
+        </p>
+
+        <h3>Etapa 4: Calibração e Validação</h3>
+        <p>
+          O sistema é calibrado com base no ambiente específico da granja — condições de iluminação, velocidade do fluxo, tamanho dos lotes. Uma validação inicial é realizada comparando a contagem do sistema com a contagem manual, para confirmar a precisão antes de iniciar a operação em produção.
+        </p>
+
+        <h3>Etapa 5: Operação e Acesso ao Dashboard</h3>
+        <p>
+          Com o sistema validado, a equipe da granja passa a operar com o dashboard da ADA como fonte primária de dados de contagem. Relatórios, históricos e alertas ficam disponíveis em tempo real. A equipe ADA acompanha a operação e oferece suporte contínuo para ajustes e otimizações.
+        </p>
+      </section>
+
+      <!-- Seção 8 -->
+      <section class="reveal">
+        <h2>Conclusão</h2>
+        <p>
+          A contagem manual de suínos é uma prática que carrega limitações inerentes: erro humano, recontagens, estresse animal e falta de rastreabilidade. A contagem automática por visão computacional e IA resolve esses problemas de forma definitiva, com precisão de 99%, operação 24 horas e dados auditáveis.
+        </p>
+        <p>
+          O <a href="../suinos.html">SuinoCount AI</a> foi desenvolvido especificamente para as condições da suinocultura brasileira e já provou seus resultados em operações reais, com zero divergências em romaneios ao longo de meses de uso.
+        </p>
+        <p>
+          Se a sua granja ainda depende de contagem manual e você quer eliminar divergências, reduzir estresse no rebanho e ter dados confiáveis para tomar decisões, o próximo passo é conversar com a equipe da ADA.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="../contratar.html" class="btn-gold no-underline">Solicitar Orçamento</a>
+          <a href="../suinos.html" class="btn-outline-gold no-underline">Ver Demonstração do SuinoCount AI</a>
+        </div>
+      </section>
+
+    </div>
+  </article>
+
+  <!-- LEIA TAMBÉM -->
+  <section class="section-light py-16 border-t border-gray-100">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl font-black text-gray-900 mb-8 reveal">Leia Também</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <a href="pesagem-suinos-ia.html" class="block bg-white border border-gray-100 rounded-lg p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 reveal">
+          <span class="text-xs font-semibold tracking-widest uppercase text-gold mb-2 block">Pesagem por IA</span>
+          <h3 class="font-bold text-gray-900 text-lg mb-2">Pesagem de Suínos sem Balança: Como a IA Estima o Peso por Segmentação</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Descubra como a pesagem por IA elimina balanças, reduz estresse e estima o peso vivo por análise do contorno corporal.</p>
+        </a>
+        <a href="suinocultura-de-precisao.html" class="block bg-white border border-gray-100 rounded-lg p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 reveal reveal-delay-1">
+          <span class="text-xs font-semibold tracking-widest uppercase text-gold mb-2 block">Guia Completo</span>
+          <h3 class="font-bold text-gray-900 text-lg mb-2">Suinocultura de Precisão: O Guia Completo para 2026</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Visão computacional, contagem automática, pesagem por IA e monitoramento 24h — tudo sobre as tecnologias que transformam granjas brasileiras.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="section-dark py-12 border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <a href="../index.html" class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded flex items-center justify-center bg-gold-500">
+              <span class="text-sm font-black text-green-950">ADA</span>
+            </div>
+            <span class="text-white font-bold text-lg">ADA Agro</span>
+          </a>
+          <p class="text-white/40 text-sm leading-relaxed">
+            Automação de Dados Agropecuários.<br/>Tecnologia de IA para pecuária de precisão.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-widest">Produtos</h4>
+          <ul class="space-y-2">
+            <li><a href="../suinos.html" class="text-white/40 text-sm hover:text-gold-500 transition-colors">SuinoCount AI</a></li>
+            <li><a href="../gado.html" class="text-white/40 text-sm hover:text-gold-500 transition-colors">BovinoSmart AI</a></li>
+            <li><a href="../contratar.html" class="text-white/40 text-sm hover:text-gold-500 transition-colors">Contratar</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-widest">Contato</h4>
+          <a href="mailto:contato.olheai@gmail.com" class="text-white/40 text-sm hover:text-gold-500 transition-colors">contato.olheai@gmail.com</a>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-white/25 text-xs">© 2026 ADA — Automação de Dados Agropecuários. Todos os direitos reservados.</p>
+        <p class="text-white/20 text-xs">Desenvolvido com IA · Operado com responsabilidade</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
+  </script>
+
+</body>
+</html>

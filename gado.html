@@ -16,6 +16,10 @@
   <meta property="og:url" content="https://ada.tarslabs.io/gado.html" />
   <meta property="og:site_name" content="ADA Agro" />
   <meta property="og:locale" content="pt_BR" />
+  <meta property="og:image" content="https://ada.tarslabs.io/og-gado.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://ada.tarslabs.io/og-gado.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
@@ -126,17 +130,57 @@
     .reveal-delay-3 { transition-delay: 0.3s; }
   </style>
   <script type="application/ld+json">
+[
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "BovinoSmart AI",
     "applicationCategory": "BusinessApplication",
-    "description": "Monitoramento inteligente de bovinos com visão computacional. Contagem no brete, identificação de raça e porte, detecção de anomalias comportamentais.",
+    "description": "Monitoramento inteligente de bovinos com visão computacional. Contagem automática no brete, identificação de raça e porte (Nelore, Angus, Girolando), e detecção de anomalias comportamentais em tempo real.",
     "operatingSystem": "Web",
     "offers": { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "BRL" }, "availability": "https://schema.org/OnlineOnly" },
     "provider": { "@type": "Organization", "name": "ADA Agro", "email": "contato.olheai@gmail.com", "url": "https://ada.tarslabs.io/" },
-    "keywords": "monitoramento de bovinos, pecuária de precisão, contagem de gado, detecção de anomalias"
+    "keywords": "monitoramento de bovinos, pecuária de precisão, contagem de gado, contagem no brete, detecção de anomalias, visão computacional bovinos"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Como funciona a contagem automática de bovinos no brete?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O BovinoSmart AI utiliza câmeras IP posicionadas no brete com uma linha virtual configurável. Cada bovino que passa é detectado e contado automaticamente pelo modelo proprietário de visão computacional, com registro histórico no dashboard. O sistema funciona com raças como Nelore, Angus e Girolando, alcançando precisão superior a 99% mesmo com 600 cabeças passando em manejo pesado."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O sistema identifica diferentes raças de bovinos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O BovinoSmart AI realiza classificação automática por porte e características visuais do animal, diferenciando categorias do lote sem manejo manual. O modelo foi desenvolvido especificamente para bovinos brasileiros — Nelore, Angus, Girolando — em condições reais de campo, brete e confinamento."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O BovinoSmart AI detecta anomalias comportamentais?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O sistema gera alertas automáticos para comportamentos atípicos como animal isolado, queda e claudicação. Isso permite intervenção precoce antes que problemas de saúde se agravem, melhorando o bem-estar animal e reduzindo perdas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qual a diferença entre o BovinoSmart AI e o SuinoCount AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ambos utilizam a mesma infraestrutura validada de visão computacional da ADA. O SuinoCount AI é especializado em suínos, com contagem, pesagem por segmentação e avaliação de escore corporal (BCS). O BovinoSmart AI é adaptado para bovinos, com contagem no brete, identificação de raça e porte, e detecção de anomalias comportamentais. Os modelos são calibrados para as particularidades de cada espécie."
+        }
+      }
+    ]
   }
+]
   </script>
 </head>
 <body class="bg-white text-gray-900">
@@ -451,6 +495,53 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ BOVINOS - SEO/GEO -->
+  <section id="faq-bovinos" class="bg-white py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-14 reveal">
+        <span class="gold-line mb-4 block mx-auto"></span>
+        <h2 class="text-4xl font-black text-gray-900 mb-4">Perguntas Frequentes sobre Monitoramento de Bovinos</h2>
+        <p class="text-gray-500 max-w-xl mx-auto text-lg">
+          Dúvidas sobre contagem automática, identificação de raças e pecuária de precisão.
+        </p>
+      </div>
+      <div class="space-y-4">
+        <details class="bg-gray-50 border border-gray-100 rounded-lg shadow-sm reveal" open>
+          <summary class="px-6 py-5 cursor-pointer font-bold text-gray-900 hover:text-green-700 transition-colors">
+            Como funciona a contagem automática de bovinos no brete?
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">
+            O BovinoSmart AI utiliza câmeras IP posicionadas no brete com uma <strong>linha virtual configurável</strong>. Cada bovino que passa é detectado e contado automaticamente pelo modelo proprietário de visão computacional, com registro histórico no dashboard. O sistema funciona com raças como Nelore, Angus e Girolando, alcançando <strong>precisão superior a 99%</strong> mesmo com 600 cabeças passando em manejo pesado.
+          </div>
+        </details>
+        <details class="bg-gray-50 border border-gray-100 rounded-lg shadow-sm reveal reveal-delay-1">
+          <summary class="px-6 py-5 cursor-pointer font-bold text-gray-900 hover:text-green-700 transition-colors">
+            O sistema identifica diferentes raças de bovinos?
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">
+            Sim. O BovinoSmart AI realiza classificação automática por porte e características visuais do animal, diferenciando categorias do lote sem manejo manual. O modelo foi desenvolvido especificamente para bovinos brasileiros — <strong>Nelore, Angus, Girolando</strong> — em condições reais de campo, brete e confinamento.
+          </div>
+        </details>
+        <details class="bg-gray-50 border border-gray-100 rounded-lg shadow-sm reveal reveal-delay-1">
+          <summary class="px-6 py-5 cursor-pointer font-bold text-gray-900 hover:text-green-700 transition-colors">
+            O BovinoSmart AI detecta anomalias comportamentais?
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">
+            Sim. O sistema gera <strong>alertas automáticos</strong> para comportamentos atípicos como animal isolado, queda e claudicação. Isso permite intervenção precoce antes que problemas de saúde se agravem, melhorando o bem-estar animal e reduzindo perdas.
+          </div>
+        </details>
+        <details class="bg-gray-50 border border-gray-100 rounded-lg shadow-sm reveal reveal-delay-2">
+          <summary class="px-6 py-5 cursor-pointer font-bold text-gray-900 hover:text-green-700 transition-colors">
+            Qual a diferença entre o BovinoSmart AI e o SuinoCount AI?
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">
+            Ambos utilizam a mesma infraestrutura validada de visão computacional da ADA. O <strong>SuinoCount AI</strong> é especializado em suínos, com contagem, pesagem por segmentação e avaliação de escore corporal (BCS). O <strong>BovinoSmart AI</strong> é adaptado para bovinos, com contagem no brete, identificação de raça e porte, e detecção de anomalias comportamentais. Os modelos são calibrados para as particularidades de cada espécie.
+          </div>
+        </details>
       </div>
     </div>
   </section>
